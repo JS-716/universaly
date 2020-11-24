@@ -10,10 +10,37 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_24_095824) do
+ActiveRecord::Schema.define(version: 2020_11_24_103137) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "categories", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "flashcards", force: :cascade do |t|
+    t.boolean "matching"
+    t.integer "requested_position"
+    t.integer "translated_position"
+    t.bigint "session_id", null: false
+    t.bigint "word_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["session_id"], name: "index_flashcards_on_session_id"
+    t.index ["word_id"], name: "index_flashcards_on_word_id"
+  end
+
+  create_table "sessions", force: :cascade do |t|
+    t.integer "score"
+    t.integer "words_count"
+    t.bigint "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_sessions_on_user_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -23,8 +50,34 @@ ActiveRecord::Schema.define(version: 2020_11_24_095824) do
     t.datetime "remember_created_at"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "first_name"
+    t.string "last_name"
+    t.string "profile_picture"
+    t.string "reward"
+    t.string "mother_tongue"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  create_table "words", force: :cascade do |t|
+    t.string "word_requested"
+    t.string "word_translated"
+    t.string "language_requested"
+    t.string "language_translated"
+    t.text "context_details"
+    t.string "progress"
+    t.boolean "favorite"
+    t.bigint "user_id", null: false
+    t.bigint "category_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["category_id"], name: "index_words_on_category_id"
+    t.index ["user_id"], name: "index_words_on_user_id"
+  end
+
+  add_foreign_key "flashcards", "sessions"
+  add_foreign_key "flashcards", "words"
+  add_foreign_key "sessions", "users"
+  add_foreign_key "words", "categories"
+  add_foreign_key "words", "users"
 end
