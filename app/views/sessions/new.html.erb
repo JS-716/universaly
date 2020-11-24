@@ -1,0 +1,18 @@
+<div class="container">
+  <h3>Prêt pour l'exercice </h3>
+  <%= simple_form_for @session do |f| %>
+    <%= f.association :category, label: "Choisir une ou plusieurs catégories", 
+      as: :check_boxes,
+      input_html: { class: "tag-selector" },
+      item_wrapper_class: 'tag-item' %>
+    <%= f.input :words_count, label: "Nombres de flashcard", collection: [5, 10, 15, 20] %>
+    <%#= f.submit "Submit review", class: "btn btn-primary" %>
+  <% end %>
+
+  <%# Choisir entre "apprendre" et "réviser" %>
+  <%# Choisir "all" ou une "catégories" %>
+  <%# Choisir de trvailler seullement sur les favoris => Check Box %>
+  <%# Sélectionner le nombre de carte à travailler %>
+  <%# Appuyer sur le bouton pour lancer l'exercice => Link_to %>
+
+</div>
