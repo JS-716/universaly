@@ -1,128 +1,142 @@
-
-
-<div class="d-flex main-container">
-  <div class="container">
-    <h2>Langue maternelle</h2> + cl_image_tag(clé cloudinary)
-    <!-- Button "Practice" -->
-    <%#= link_to "Je pratique!", new_session_path, class: "btn btn-primary"%>
-    <button type="button" class="btn btn-primary">Je pratique!</button>
-    <!-- Button "Practice" -->
-    <%#= link_to "Ma bibliothèque", words_path, class: "btn btn-primary"%>
-    <button type="button" class="btn btn-primary">Ma bibliothèque!</button>
+<div class="main-container-dashboard">
+  <div class="divdash d-flex justify-content-around p-3 m-5">
+    <!-- <div class="justify-content-start"> -->
+      <div class="d-flex align-items-center">
+        <h4 id="maternelle">Langue maternelle</h4> <!-- + cl_image_tag(clé cloudinary) -->
+      </div>
+      <!-- Button "Practice" -->
+      <%#= link_to "Je pratique!", new_session_path, class: "btn btn-primary"%>
+        <button id="btnpractice" type="button">Je pratique!</button>
+      <!-- Button "Practice" -->
+      <%#= link_to "Ma bibliothèque", words_path, class: "btn btn-primary"%>
+        <button id="btnbibli" type="button">Ma bibliothèque!</button>
+    <!-- </div>-->
   </div>
+  <!--   <div class="justify-content-end">
+  </div> -->
 
-  <div class="container">
-    cl_image_tag(clé cloudinary) + <h2>Statistiques</h2>
-    <div class="container">
-      <h3>Streak</h3> + cl_image_tag
-        <% if @user.streak > 1 %>
-          <%= "#{@user.streak(:sessions)} jours à la suite, Félicitations !" %>
-        <% else %>
-          <%#= "#{@user.streak(:sessions)} jour, Courage !" %>
-          <%= "A quelle heure tu t'y mets branleur??" %>
-        <% end %>
+  <div class="divdash border p-3 m-5">
+    <div>
+      <h2 class="">Statistiques</h2>
+      <%= cl_image_tag("Dashboard_stats_lwlpqm", width: 400, height: 300, crop: :fill) %>
     </div>
 
-    <div class="container">
-      <h3>Mots appris</h3>
-          <!--   Total de mots appris-->
-        <%= @user.words.count.where(progress:"appris") %>
-        <% words_learnt = 0 %>
-        <% @sessions.each do |session| %>
-          <!-- Nombre de mots appris aujourd'hui -->
-          <% if session.created_at == Date.today %>
-            <%= words_learnt += session.score %>
-          <% elsif (Date.today - 6) < session.created_at < Date.today %>
-            <%= words_learnt += session.score %>
-          <% elsif (Date.today - 30) < session.created_at < Date.today %>
-            <%= words_learnt += session.score %>
-          <% end %>
-        <% end %>
-    </div>
+    <div class="d-flex align-items-center justify-content-between">
+      <div class="d-flex column">
+        <p class="paragraphspaddingfordash">Streak</p> <!-- + cl_image_tag -->
+        <h3>3 jours d'affilée</h3>
+        <%# if @user.streak > 1 %>
+        <%#= "#{@user.streak(:sessions)} jours à la suite, Félicitations !" %>
+        <%# else %>
+        <%#= "#{@user.streak(:sessions)} jour, Courage !" %>
+        <%#= "A quelle heure tu t'y mets branleur??" %>
+        <%# end %>
+      </div>
+      <div class="d-flex">
+        <p class="paragraphspaddingfordash">Mots appris</p>
+        <h3>32</h3>
+        <!--   Total de mots appris-->
+        <%#= @user.words.count.where(progress:"appris") %>
+      </div>
+      <div class="align-items-center">
+        <div class="d-flex column">
+          <%# words_learnt = 0 %>
+        <%# @sessions.each do |session| %>
+          <p class="paragraphspaddingfordash"> Nombre de mots appris aujourd'hui </p>
+          <h3>8</h3>
+        </div>
+        <div class="d-flex column">
+        <%# if session.created_at == Date.today %>
+        <%#= words_learnt += session.score %>
+          <p class="paragraphspaddingfordash"> Nombre de mots appris cette semaine </p>
+          <h3>12</h3>
+        <%# elsif (Date.today - 6) < session.created_at < Date.today %>
+        <%#= words_learnt += session.score %>
+        </div>
+        <div class="d-flex column">
+          <p class="paragraphspaddingfordash"> Nombre de mots appris ce mois-ci </p>
+          <h3>28</h3>
+        <%# elsif (Date.today - 30) < session.created_at < Date.today %>
+        <%#= words_learnt += session.score %>
+        <%# end %>
+        <%# end %>
+        </div>
+      </div>
 
-  <div class="container">
-    cl_image_tag + <h2>Trophées</h2>
-    <div class="row">
-
-      <div class="card">
-        <h3>Feu sacré</h3>
-        cl_image_tag
-        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
-      </div>
-      <div class="card">
-        <h3>Conquérant</h3>
-        cl_image_tag
-        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
-      </div>
-      <div class="card">
-        <h3>Challenger</h3>
-        cl_image_tag
-        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
-      </div>
-      <div class="card">
-        <h3>Erudit</h3>
-        cl_image_tag
-        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
-      </div>
-      <div class="card">
-        <h3>Champion</h3>
-        cl_image_tag
-        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
-      </div>
-      <div class="card">
-        <h3>Légendaire</h3>
-        cl_image_tag
-        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
-      </div>
     </div>
   </div>
 
-  <div class="container">
-    cl_image_tag + <h2>Mes catégories</h2>
-    <% if category0 = @words.categories[0][:name] %>
-      <%= link_to "#{category0}", words_path(category: category0), class: "btn btn-primary"%>
-    <% else %>
-      <%= cl_image_tag %>
-    <% end %>
-    <% if category1 = @words.categories[1][:name] %>
-      <%= link_to "#{category1}", words_path(category: category1), class: "btn btn-primary"%>
-    <% else %>
-      <%= cl_image_tag %>
-    <% end %>
-    <% if category2 = @words.categories[2][:name] %>
-      <%= link_to "#{category2}", words_path(category: category2), class: "btn btn-primary"%>
-    <% else %>
-      <%= cl_image_tag %>
-    <% end %>
-    <% if category3 = @words.categories[3][:name] %>
-      <%= link_to "#{category3}", words_path(category: category3), class: "btn btn-primary"%>
-    <% else %>
-      <%= cl_image_tag %>
-    <% end %>
-    <% if category4 = @words.categories[4][:name] %>
-      <%= link_to "#{category4}", words_path(category: category4), class: "btn btn-primary"%>
-    <% else %>
-      <%= cl_image_tag %>
-    <% end %>
-    <% if category5 = @words.categories[5][:name] %>
-      <%= link_to "#{category5}", words_path(category: category5), class: "btn btn-primary"%>
-    <% else %>
-      <%= cl_image_tag %>
-    <% end %>
+  <div class="divdash border p-3 m-5 d-flex ">
+    <div>
+      <div class="trophées border">
+        <h2>Trophées</h2>
+      </div>
+      <div class="row">
+        <div class="card">
+          <h3>Feu sacré</h3>
+          <!-- cl_image_tag -->
+          <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
+        </div>
+        <div class="card">
+          <h3>Conquérant</h3>
+          <!-- cl_image_tag -->
+          <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
+        </div>
+        <div class="card">
+          <h3>Challenger</h3>
+          <!-- cl_image_tag -->
+          <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
+        </div>
+        <div class="card">
+          <h3>Erudit</h3>
+          <!-- cl_image_tag -->
+          <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
+        </div>
+        <div class="card">
+          <h3>Champion</h3>
+          <!-- cl_image_tag -->
+          <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
+        </div>
+        <div class="card">
+          <h3>Légendaire</h3>
+          <!-- cl_image_tag -->
+          <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
+        </div>
+      </div>
+    </div>
 
+    <div>
+      <h2>Mes catégories</h2>
+      <%# if category0 = @words.categories[0][:name] %>
+      <%#= link_to "#{category0}", words_path(category: category0), class: "btn btn-primary"%>
+      <%# else %>
+      <%#= cl_image_tag %>
+      <%# end %>
+      <%# if category1 = @words.categories[1][:name] %>
+      <%#= link_to "#{category1}", words_path(category: category1), class: "btn btn-primary"%>
+      <%# else %>
+      <%#= cl_image_tag %>
+      <%# end %>
+      <%# if category2 = @words.categories[2][:name] %>
+      <%#= link_to "#{category2}", words_path(category: category2), class: "btn btn-primary"%>
+      <%# else %>
+      <%#= cl_image_tag %>
+      <%# end %>
+      <%# if category3 = @words.categories[3][:name] %>
+      <%#= link_to "#{category3}", words_path(category: category3), class: "btn btn-primary"%>
+      <%# else %>
+      <%#= cl_image_tag %>
+      <%# end %>
+      <%# if category4 = @words.categories[4][:name] %>
+      <%#= link_to "#{category4}", words_path(category: category4), class: "btn btn-primary"%>
+      <%# else %>
+      <%#= cl_image_tag %>
+      <%# end %>
+      <%# if category5 = @words.categories[5][:name] %>
+      <%#= link_to "#{category5}", words_path(category: category5), class: "btn btn-primary"%>
+      <%# else %>
+      <%#= cl_image_tag %>
+      <%# end %>
+    </div>
   </div>
-
-
-  </div>
-
 </div>
-
-
-
-
-  <!-- Progress -->
-    <!-- Streak -->
-    <%#= user.streak(:sessions) %>
-    <%# user.streak(:words) %>
-
-
