@@ -17,13 +17,13 @@
 
   <div class="divdash border p-3 m-5">
     <div>
-      <h2 class="">Statistiques</h2>
-      <%= cl_image_tag("Dashboard_stats_lwlpqm", width: 400, height: 300, crop: :fill) %>
+      <h2 class="stats">Statistiques</h2>
+      <%#= cl_image_tag("Dashboard_stats_lwlpqm", width: 400, height: 300, crop: :fill) %>
     </div>
 
     <div class="d-flex align-items-center justify-content-between">
       <div class="d-flex column">
-        <p class="paragraphspaddingfordash">Streak</p> <!-- + cl_image_tag -->
+        <p class="paragraphspaddingfordash">Streak:</p> <!-- + cl_image_tag -->
         <h3>3 jours d'affilée</h3>
         <%# if @user.streak > 1 %>
         <%#= "#{@user.streak(:sessions)} jours à la suite, Félicitations !" %>
@@ -33,7 +33,7 @@
         <%# end %>
       </div>
       <div class="d-flex">
-        <p class="paragraphspaddingfordash">Mots appris</p>
+        <p class="paragraphspaddingfordash">Mots appris:</p>
         <h3>32</h3>
         <!--   Total de mots appris-->
         <%#= @user.words.count.where(progress:"appris") %>
@@ -42,19 +42,19 @@
         <div class="d-flex column">
           <%# words_learnt = 0 %>
         <%# @sessions.each do |session| %>
-          <p class="paragraphspaddingfordash"> Nombre de mots appris aujourd'hui </p>
+          <p class="paragraphspaddingfordash"> Nombre de mots appris aujourd'hui:</p>
           <h3>8</h3>
         </div>
         <div class="d-flex column">
         <%# if session.created_at == Date.today %>
         <%#= words_learnt += session.score %>
-          <p class="paragraphspaddingfordash"> Nombre de mots appris cette semaine </p>
+          <p class="paragraphspaddingfordash"> Nombre de mots appris cette semaine:</p>
           <h3>12</h3>
         <%# elsif (Date.today - 6) < session.created_at < Date.today %>
         <%#= words_learnt += session.score %>
         </div>
         <div class="d-flex column">
-          <p class="paragraphspaddingfordash"> Nombre de mots appris ce mois-ci </p>
+          <p class="paragraphspaddingfordash"> Nombre de mots appris ce mois-ci:</p>
           <h3>28</h3>
         <%# elsif (Date.today - 30) < session.created_at < Date.today %>
         <%#= words_learnt += session.score %>
@@ -66,47 +66,39 @@
     </div>
   </div>
 
-  <div class="divdash border p-3 m-5 d-flex ">
-    <div>
-      <div class="trophées border">
-        <h2>Trophées</h2>
+  <div class="divdash m-5 d-flex justify-content-between " style="padding-bottom: 50px">
+    <div class="check border">
+      <div class="">
+        <h2 class="trophees">Trophées</h2>
       </div>
-      <div class="row">
-        <div class="card">
-          <h3>Feu sacré</h3>
-          <!-- cl_image_tag -->
-          <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
-        </div>
-        <div class="card">
-          <h3>Conquérant</h3>
-          <!-- cl_image_tag -->
-          <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
-        </div>
-        <div class="card">
-          <h3>Challenger</h3>
-          <!-- cl_image_tag -->
-          <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
-        </div>
-        <div class="card">
-          <h3>Erudit</h3>
-          <!-- cl_image_tag -->
-          <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
-        </div>
-        <div class="card">
-          <h3>Champion</h3>
-          <!-- cl_image_tag -->
-          <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
-        </div>
-        <div class="card">
-          <h3>Légendaire</h3>
-          <!-- cl_image_tag -->
-          <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
-        </div>
+      <div class="">
+
+        <div class="cards row justify-content-around">
+          <div class="card-category col-5" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://res.cloudinary.com/dyrkwhhio/image/upload/v1606308622/Universaly/Dashboard_Trophees_Feu-sacr%C3%A9_Vide_rpmxta.png">
+              Feu sacré
+          </div>
+          <div class="card-category col-5" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://res.cloudinary.com/dyrkwhhio/image/upload/v1606308622/Universaly/Dashboard_Trophees_Conqu%C3%A9rant_Vide_mlxock.png)">
+              Conquérant
+          </div>
+          <div class="card-category col-5" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://res.cloudinary.com/dyrkwhhio/image/upload/v1606309816/Universaly/Dashboard_Trophees_Challenger_Vide_j61szd.png)">
+              Challenger
+           </div>
+           <div class="card-category col-5" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://res.cloudinary.com/dyrkwhhio/image/upload/v1606309816/Universaly/Dashboard_Trophees_Erudit_Vide_d6cor1.png)">
+              Erudit
+           </div>
+           <div class="card-category col-5" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://res.cloudinary.com/dyrkwhhio/image/upload/v1606309816/Universaly/Dashboard_Trophees_Champion_Vide_zmkev9.png)">
+              Champion
+            </div>
+            <div class="card-category col-5" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://res.cloudinary.com/dyrkwhhio/image/upload/v1606309816/Universaly/Dashboard_Trophees_L%C3%A9gendaire_Vide_xwoewb.png)">
+              Légendaire
+           </div>
+         </div>
       </div>
     </div>
 
-    <div>
-      <h2>Mes catégories</h2>
+    <div class="check border">
+      <h2 class="categories">Mes catégories</h2>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Velit mollitia quia ratione rerum perferendis vel eum magni id reiciendis corporis eos suscipit voluptatum hic, placeat beatae nisi, non explicabo quasi.</p>
       <%# if category0 = @words.categories[0][:name] %>
       <%#= link_to "#{category0}", words_path(category: category0), class: "btn btn-primary"%>
       <%# else %>
