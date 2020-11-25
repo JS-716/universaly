@@ -1,1 +1,21 @@
-<h2>Show de Words (=library)</h2>
+<div class = "container">
+  <%= link_to "Retour à la liste", words_path, class:"btn btn-light rounded" %>
+
+  <div class = "container-word-info">
+    <h2><%= @word.word_requested %></h2>
+    <hr>
+
+    <h3>TRADUCTION</h3>
+    <h2><%= @word.word_translated %></h2>
+
+    <h3>CONTEXTE DE LA TRADUCTION</h3>
+    <p><%= @word.context_details %></p>
+  </div>
+
+  <div class = "container-word-category">
+    <p><%= @word.category.name %></p>
+  </div>
+
+  <%= link_to "Précédent", word_path((@word.id-1)), class:"btn btn-dark rounded" %>
+  <%= link_to "Suivant", word_path((@word.id+1)), class:"btn btn-dark rounded" %>
+</div>

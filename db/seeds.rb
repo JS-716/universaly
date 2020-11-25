@@ -79,9 +79,9 @@ constituency = Word.create!(word_requested: "Constituency", word_translated: "Ci
 impeachment = Word.create!(word_requested: "Impeachment", word_translated: "Mise en accusation", language_requested: "en", language_translated: "fr", context_details: "A majority of two thirds of the votes of parliamentarians is required to initiate impeachment proceedings. ", progress: "Nouveau", favorite: "false", user_id: celine.id, category_id: histoire.id)
 
 puts "Creating 3 Exercises..."
-exercise1 = Exercise.create!(words_count: 10, score: 6, user_id: margot.id, category_id: finance.id)
+exercise1 = Exercise.create!(words_count: 10, score: 6, user_id: celine.id, category_id: finance.id)
 exercise2 = Exercise.create!(words_count: 10, score: 8, user_id: celine.id, category_id: politique.id)
-exercise3 = Exercise.create!(words_count: 10, score: 7, user_id: paul.id, category_id: webdev.id)
+exercise3 = Exercise.create!(words_count: 10, score: 7, user_id: celine.id, category_id: webdev.id)
 
 puts "Creating 30 Flashcards..."
 flashcard1 = Flashcard.create!(exercise_id: exercise1.id, word_id: interest_rate.id)
