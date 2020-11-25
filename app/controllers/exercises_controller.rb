@@ -1,6 +1,6 @@
-class SessionsController < ApplicationController
+class ExercisesController < ApplicationController
   def new
-    @session = Session.new
+    @exercise = Exercise.new
   end
 
   def create

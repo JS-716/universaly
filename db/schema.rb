@@ -21,27 +21,27 @@ ActiveRecord::Schema.define(version: 2020_11_24_160951) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "flashcards", force: :cascade do |t|
-    t.boolean "matching"
-    t.integer "requested_position"
-    t.integer "translated_position"
-    t.bigint "session_id", null: false
-    t.bigint "word_id", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["session_id"], name: "index_flashcards_on_session_id"
-    t.index ["word_id"], name: "index_flashcards_on_word_id"
-  end
-
-  create_table "sessions", force: :cascade do |t|
+  create_table "exercises", force: :cascade do |t|
     t.integer "score"
     t.integer "words_count"
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "category_id", null: false
-    t.index ["category_id"], name: "index_sessions_on_category_id"
-    t.index ["user_id"], name: "index_sessions_on_user_id"
+    t.index ["category_id"], name: "index_exercises_on_category_id"
+    t.index ["user_id"], name: "index_exercises_on_user_id"
+  end
+
+  create_table "flashcards", force: :cascade do |t|
+    t.boolean "matching"
+    t.integer "requested_position"
+    t.integer "translated_position"
+    t.bigint "exercise_id", null: false
+    t.bigint "word_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["exercise_id"], name: "index_flashcards_on_exercise_id"
+    t.index ["word_id"], name: "index_flashcards_on_word_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -77,10 +77,10 @@ ActiveRecord::Schema.define(version: 2020_11_24_160951) do
     t.index ["user_id"], name: "index_words_on_user_id"
   end
 
-  add_foreign_key "flashcards", "sessions"
+  add_foreign_key "exercises", "categories"
+  add_foreign_key "exercises", "users"
+  add_foreign_key "flashcards", "exercises"
   add_foreign_key "flashcards", "words"
-  add_foreign_key "sessions", "categories"
-  add_foreign_key "sessions", "users"
   add_foreign_key "words", "categories"
   add_foreign_key "words", "users"
 end

@@ -1,6 +1,6 @@
 <div class="container">
   <h3>Prêt pour l'exercice </h3>
-  <%= simple_form_for @session do |f| %>
+  <%= simple_form_for @exercise do |f| %>
     <%= f.association :category, label: "Choisir une ou plusieurs catégories", 
       as: :check_boxes,
       input_html: { class: "tag-selector" },
