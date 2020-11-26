@@ -1,21 +1,27 @@
 class WordsController < ApplicationController
   def index
-    if params[:query1].present?
-      sql_query = "word_requested ILIKE :query1 OR word_translated ILIKE :query1 OR context_details ILIKE :query1"
-      @words = Word.where(sql_query, query1: "%#{params[:query1]}%")
-    elsif params[:query2].present?
-      sql_query = "categories.name ILIKE :query2"
-      @words = Word.joins(:category).where(sql_query, query2: "%#{params[:query2]}%")
-    elsif params[:query3].present?
-      sql_query = "progress ILIKE :query3"
-      @words = Word.where(sql_query, query3: "%#{params[:query3]}%")
-    elsif params[:query4].present?
-      sql_query = "favorite ILIKE :query4"
-      @words = Word.where(sql_query, query4: "%#{params[:query4]}%")
-    else
-      @words = Word.all
+    @words = Word.all
+
+    if params[:search].present? && params[:search][:word].present?
+      sql_query = "word_requested ILIKE :query1 OR word_translated ILIKE :query1"
+      @words = @words.where(sql_query, query1: "%#{params[:search][:word]}%")
     end
-  end
+
+    if params[:search].present? && params[:search][:category_id].present?
+      sql_query = "categories.name ILIKE :query2"
+      @words = @words.joins(:category).where(sql_query, query2: "%#{Category.find(params[:search][:category_id]).name}%")
+    end
+
+    if params[:search].present? && params[:search][:progress].present?
+      sql_query = "progress ILIKE :query3"
+      @words = @words.where(sql_query, query3: "%#{params[:search][:progress]}%")
+    end
+
+     # if params[:search].present? && params[:search][:favorite].present?
+     #   sql_query = "favorite: :query4"
+     #   @words = @words.where(sql_query, query4: "%#{params[:search][:favorite]}%")
+     # end
+    end
 
   def show
     @word = Word.find(params[:id])
