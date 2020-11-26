@@ -1,28 +1,30 @@
 <div class="main-container-dashboard">
-  <div class="divdash d-flex justify-content-around p-3 m-5">
+  <div class="divdash d-flex justify-content-around m-5">
     <!-- <div class="justify-content-start"> -->
-      <div class="d-flex align-items-center">
+      <div class=" oui d-flex align-items-center ">
+        <%= image_tag("Dashboard_drapeau.png", class: "drapeau")  %>
         <h4 id="maternelle">Langue maternelle</h4> <!-- + cl_image_tag(clé cloudinary) -->
       </div>
       <!-- Button "Practice" -->
-      <%#= link_to "Je pratique!", new_session_path, class: "btn btn-primary"%>
-        <button class="btnpractice" type="button">Je pratique!</button>
-      <!-- Button "Practice" -->
-      <%#= link_to "Ma bibliothèque", words_path, class: "btn btn-primary"%>
-        <button id="btnbibli" type="button">Ma bibliothèque!</button>
+        <%= link_to "Je pratique!", new_exercise_path, class: "btnpractice d-flex align-items-center"%>
+<!--         <button id="btnpractice" type="button">Je pratique!</button>
+ -->      <!-- Button "Practice" -->
+        <%= link_to "Ma bibliothèque", words_path, class: "btnbibli d-flex align-items-center"%>
+        <!-- <button id="btnbibli" type="button">Ma bibliothèque!</button> -->
     <!-- </div>-->
   </div>
   <!--   <div class="justify-content-end">
   </div> -->
 
   <div class="divdash border p-3 m-5">
-    <div>
+    <div class="d-flex row">
+      <%= image_tag("Dashboard_stats.png", class: "fusee")  %>
       <h2 class="stats">Statistiques</h2>
-      <%#= cl_image_tag("Dashboard_stats_lwlpqm", width: 400, height: 300, crop: :fill) %>
     </div>
 
     <div class="d-flex align-items-center justify-content-between">
-      <div class="d-flex column">
+      <div class="d-flex column align-items-center">
+        <%= image_tag("Dashboard_streak_gray.png", class: "flamme")  %>
         <p class="paragraphspaddingfordash">Streak:</p> <!-- + cl_image_tag -->
         <h3>3 jours d'affilée</h3>
         <%# if @user.streak > 1 %>
@@ -68,73 +70,57 @@
 
   <div class="divdash m-5 d-flex justify-content-between " style="padding-bottom: 50px">
     <div class="check border">
-      <div class="">
+      <div class="d-flex row">
+        <%= image_tag("Dashboard_trophees.png", class: "coupe")  %>
         <h2 class="trophees">Trophées</h2>
       </div>
       <div class="">
 
         <div class="cards row justify-content-around">
-          <div class="card-category col-5" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://res.cloudinary.com/dyrkwhhio/image/upload/v1606308622/Universaly/Dashboard_Trophees_Feu-sacr%C3%A9_Vide_rpmxta.png">
-              Feu sacré
+          <div class="card-category col-5 d-flex align-items-center justify-content-center" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://res.cloudinary.com/dyrkwhhio/image/upload/v1606308622/Universaly/Dashboard_Trophees_Feu-sacr%C3%A9_Vide_rpmxta.png">
+              <span>Feu sacré</span>
           </div>
-          <div class="card-category col-5" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://res.cloudinary.com/dyrkwhhio/image/upload/v1606308622/Universaly/Dashboard_Trophees_Conqu%C3%A9rant_Vide_mlxock.png)">
-              Conquérant
+          <div class="card-category col-5 d-flex align-items-center justify-content-center" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://res.cloudinary.com/dyrkwhhio/image/upload/v1606308622/Universaly/Dashboard_Trophees_Conqu%C3%A9rant_Vide_mlxock.png)">
+              <span>Conquérant</span>
           </div>
-          <div class="card-category col-5" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://res.cloudinary.com/dyrkwhhio/image/upload/v1606309816/Universaly/Dashboard_Trophees_Challenger_Vide_j61szd.png)">
-              Challenger
+          <div class="card-category col-5 d-flex align-items-center justify-content-center" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://res.cloudinary.com/dyrkwhhio/image/upload/v1606309816/Universaly/Dashboard_Trophees_Challenger_Vide_j61szd.png)">
+              <span>Challenger</span>
            </div>
-           <div class="card-category col-5" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://res.cloudinary.com/dyrkwhhio/image/upload/v1606309816/Universaly/Dashboard_Trophees_Erudit_Vide_d6cor1.png)">
-              Erudit
+           <div class="card-category col-5 d-flex align-items-center justify-content-center" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://res.cloudinary.com/dyrkwhhio/image/upload/v1606309816/Universaly/Dashboard_Trophees_Erudit_Vide_d6cor1.png)">
+              <span>Erudit</span>
            </div>
-           <div class="card-category col-5" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://res.cloudinary.com/dyrkwhhio/image/upload/v1606309816/Universaly/Dashboard_Trophees_Champion_Vide_zmkev9.png)">
-              Champion
+           <div class="card-category col-5 d-flex align-items-center justify-content-center" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://res.cloudinary.com/dyrkwhhio/image/upload/v1606309816/Universaly/Dashboard_Trophees_Champion_Vide_zmkev9.png)">
+              <span>Champion</span>
             </div>
-            <div class="card-category col-5" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://res.cloudinary.com/dyrkwhhio/image/upload/v1606309816/Universaly/Dashboard_Trophees_L%C3%A9gendaire_Vide_xwoewb.png)">
-              Légendaire
+            <div class="card-category col-5 d-flex align-items-center justify-content-center" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://res.cloudinary.com/dyrkwhhio/image/upload/v1606309816/Universaly/Dashboard_Trophees_L%C3%A9gendaire_Vide_xwoewb.png)">
+              <span>Légendaire</span>
            </div>
          </div>
       </div>
     </div>
 
     <div class="check border">
-      <h2 class="categories">Mes catégories</h2>
-      <button id="btn-cat1" type="button">SALUT</button>
-      <button id="btn-cat2" type="button">Coucou</button>
-      <button id="btn-cat3" type="button">bien</button>
-      <button id="btn-cat4" type="button">très</button>
-      <button id="btn-cat5" type="button">et</button>
-      <button id="btn-cat6" type="button">toi</button>
+      <div class="d-flex row">
+        <%= image_tag("Dashboard_categories.png", class: "bouquin")  %>
+        <h2 class="categories">Mes catégories</h2>
+      </div>
+      <div class="d-flex row justify-content-around">
+        <% @categories.each_with_index do |category, index| %>
+          <%= link_to category, words_path(query2: category), id: "btn-cat#{ index + 1 }" %>
+        <% end %>
+       <!--  <button id="btn-cat1" type="button">SALUT</button>
+        <button id="btn-cat2" type="button">Coucou</button>
+        <button id="btn-cat3" type="button">bien</button>
+        <button id="btn-cat4" type="button">très</button>
+        <button id="btn-cat5" type="button">et</button>
+        <button id="btn-cat6" type="button">toi</button> -->
+        <button id="btn-cat7" type="button"></button>
+        <button id="btn-cat8" type="button"></button>
+      </div>
+      <div class="d-flex justify-content-center">
+        <%= link_to "Voir plus...", words_path, id: "VoirPlus"%>
+      </div>
 
-      <%# if category0 = @words.categories[0][:name] %>
-      <%#= link_to "#{category0}", words_path(category: category0), class: "btn btn-primary"%>
-      <%# else %>
-      <%#= cl_image_tag %>
-      <%# end %>
-      <%# if category1 = @words.categories[1][:name] %>
-      <%#= link_to "#{category1}", words_path(category: category1), class: "btn btn-primary"%>
-      <%# else %>
-      <%#= cl_image_tag %>
-      <%# end %>
-      <%# if category2 = @words.categories[2][:name] %>
-      <%#= link_to "#{category2}", words_path(category: category2), class: "btn btn-primary"%>
-      <%# else %>
-      <%#= cl_image_tag %>
-      <%# end %>
-      <%# if category3 = @words.categories[3][:name] %>
-      <%#= link_to "#{category3}", words_path(category: category3), class: "btn btn-primary"%>
-      <%# else %>
-      <%#= cl_image_tag %>
-      <%# end %>
-      <%# if category4 = @words.categories[4][:name] %>
-      <%#= link_to "#{category4}", words_path(category: category4), class: "btn btn-primary"%>
-      <%# else %>
-      <%#= cl_image_tag %>
-      <%# end %>
-      <%# if category5 = @words.categories[5][:name] %>
-      <%#= link_to "#{category5}", words_path(category: category5), class: "btn btn-primary"%>
-      <%# else %>
-      <%#= cl_image_tag %>
-      <%# end %>
     </div>
   </div>
 </div>
