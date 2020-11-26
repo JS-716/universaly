@@ -5,11 +5,11 @@
         <h4 id="maternelle">Langue maternelle</h4> <!-- + cl_image_tag(clé cloudinary) -->
       </div>
       <!-- Button "Practice" -->
-      <%#= link_to "Je pratique!", new_session_path, class: "btn btn-primary"%>
-        <button id="btnpractice" type="button">Je pratique!</button>
-      <!-- Button "Practice" -->
-      <%#= link_to "Ma bibliothèque", words_path, class: "btn btn-primary"%>
-        <button id="btnbibli" type="button">Ma bibliothèque!</button>
+        <%= link_to "Je pratique!", new_exercise_path, class: "btnpractice d-flex align-items-center"%>
+<!--         <button id="btnpractice" type="button">Je pratique!</button>
+ -->      <!-- Button "Practice" -->
+        <%= link_to "Ma bibliothèque", words_path, class: "btnbibli d-flex align-items-center"%>
+        <!-- <button id="btnbibli" type="button">Ma bibliothèque!</button> -->
     <!-- </div>-->
   </div>
   <!--   <div class="justify-content-end">
@@ -18,7 +18,7 @@
   <div class="divdash border p-3 m-5">
     <div>
       <h2 class="stats">Statistiques</h2>
-      <%#= cl_image_tag("Dashboard_stats_lwlpqm", width: 400, height: 300, crop: :fill) %>
+      <%#= image_tag("Dashboard_stats_lwlpqm"), class: "fusee" %>
     </div>
 
     <div class="d-flex align-items-center justify-content-between">
@@ -74,23 +74,23 @@
       <div class="">
 
         <div class="cards row justify-content-around">
-          <div class="card-category col-5" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://res.cloudinary.com/dyrkwhhio/image/upload/v1606308622/Universaly/Dashboard_Trophees_Feu-sacr%C3%A9_Vide_rpmxta.png">
-              Feu sacré
+          <div class="card-category col-5 align-items-center" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://res.cloudinary.com/dyrkwhhio/image/upload/v1606308622/Universaly/Dashboard_Trophees_Feu-sacr%C3%A9_Vide_rpmxta.png">
+              <span>Feu sacré</span>
           </div>
-          <div class="card-category col-5" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://res.cloudinary.com/dyrkwhhio/image/upload/v1606308622/Universaly/Dashboard_Trophees_Conqu%C3%A9rant_Vide_mlxock.png)">
-              Conquérant
+          <div class="card-category col-5 d-flex align-items-center" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://res.cloudinary.com/dyrkwhhio/image/upload/v1606308622/Universaly/Dashboard_Trophees_Conqu%C3%A9rant_Vide_mlxock.png)">
+              <p>Conquérant</p>
           </div>
-          <div class="card-category col-5" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://res.cloudinary.com/dyrkwhhio/image/upload/v1606309816/Universaly/Dashboard_Trophees_Challenger_Vide_j61szd.png)">
-              Challenger
+          <div class="card-category col-5 align-items-center" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://res.cloudinary.com/dyrkwhhio/image/upload/v1606309816/Universaly/Dashboard_Trophees_Challenger_Vide_j61szd.png)">
+              <span>Challenger</span>
            </div>
-           <div class="card-category col-5" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://res.cloudinary.com/dyrkwhhio/image/upload/v1606309816/Universaly/Dashboard_Trophees_Erudit_Vide_d6cor1.png)">
-              Erudit
+           <div class="card-category col-5 align-items-center" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://res.cloudinary.com/dyrkwhhio/image/upload/v1606309816/Universaly/Dashboard_Trophees_Erudit_Vide_d6cor1.png)">
+              <span>Erudit</span>
            </div>
-           <div class="card-category col-5" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://res.cloudinary.com/dyrkwhhio/image/upload/v1606309816/Universaly/Dashboard_Trophees_Champion_Vide_zmkev9.png)">
-              Champion
+           <div class="card-category col-5 align-items-center" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://res.cloudinary.com/dyrkwhhio/image/upload/v1606309816/Universaly/Dashboard_Trophees_Champion_Vide_zmkev9.png)">
+              <span>Champion</span>
             </div>
-            <div class="card-category col-5" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://res.cloudinary.com/dyrkwhhio/image/upload/v1606309816/Universaly/Dashboard_Trophees_L%C3%A9gendaire_Vide_xwoewb.png)">
-              Légendaire
+            <div class="card-category col-5 align-items-center" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://res.cloudinary.com/dyrkwhhio/image/upload/v1606309816/Universaly/Dashboard_Trophees_L%C3%A9gendaire_Vide_xwoewb.png)">
+              <span>Légendaire</span>
            </div>
          </div>
       </div>
