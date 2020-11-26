@@ -13,7 +13,7 @@
               </div>
               <div class="flashcard-context">
                 <h5>Extrait</h5>
-                <%= "~ #{@flashcard.word.context_details} ~" %>
+                <p id="word-description-requested"><%= "~ #{@flashcard.word.context_details} ~" %></p>
               </div>
             </div>
 
@@ -30,12 +30,21 @@
   </div>
 
   <div class="container-btn-flashcards-show">
-    <div class="button-previous-flashcards"><%= link_to "Précédent", exercise_flashcard_path(@exercise, @previous_flashcard) %></div>
-    <div class="button-next-flashcards"><%= link_to "Suivant", exercise_flashcard_path(@exercise, @next_flashcard) %></div>
+    <div class="button-previous-flashcards">
+      <%= link_to exercise_flashcard_path(@exercise, @previous_flashcard) do %>
+        <%= image_tag "btn_previous.png" %>
+      <% end %>
+    </div>
+    
+    <div class="button-next-flashcards">
+      <%= link_to exercise_flashcard_path(@exercise, @next_flashcard) do %>
+        <%= image_tag "btn_next.png" %>
+      <% end %>
+    </div>
   </div>
 
   <div class="remaining-flashcards">
-  <%= "#{(@exercise.flashcards.index(@flashcard))+1}/#{@flashcard.exercise.words_count}" %>
+    <h5><%= "#{(@exercise.flashcards.index(@flashcard))+1}/#{@flashcard.exercise.words_count}" %></h5>
   </div>
 
 </div>
