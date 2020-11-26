@@ -1,17 +1,28 @@
 <div class="container">
-  <h3>Prêt pour l'exercice </h3>
-  <%= simple_form_for @exercise do |f| %>
-    <%= f.error_notification %>
-    <%= f.input :category, collection: Category.all, include_hidden: false, label: "Choisir une ou plusieurs catégories",
-      as: :radio_buttons,
-      input_html: { class: "tag-selector" },
-      item_wrapper_class: 'tag-item' %>
-    <%= f.input :words_count, label: "Nombres de flashcard", as: :range %>
-    <div id="h4-container"><div id="h4-subcontainer"><h4>0<span></span></h4></div></div>
-    <%#= f.input :words_count, label: "Nombres de flashcard", collection: [5, 10, 15, 20] %>
-    <%= f.submit "Débuter l'exercice", class: "btn btn-primary" %>
-  <% end %>
-  <%#= link_to "back", user_path, class:"btn btn-primary" %>
+  <div class="title-exercise-container text-center divdash border p-3 m-5 titreh3">
+    <h3>Prêt pour l'exercice</h3>
+  </div>
+  <div class="exercise-container divdash-exercise border p-3 m-5">
+    <div class="choise-exercise-container text-center text_exercices">
+      <%= simple_form_for @exercise do |f| %>
+        <%= f.error_notification %>
+        <%= f.input :category, collection: Category.all, include_hidden: false, label: "Choisir entre les catégories",
+          as: :radio_buttons,
+          input_html: { class: "tag-selector" },
+          item_wrapper_class: 'tag-item' %>
+        <%= f.input :words_count, label: "Choisir le nombres de flashcard", as: :range %>
+        <div id="h4-container"><div id="h4-subcontainer"><h4>0<span></span></h4></div></div>
+        <%#= f.input :words_count, label: "Nombres de flashcard", collection: [5, 10, 15, 20] %>
+        <%= f.submit "Débuter l'exercice", class: "btnpractice" %>
+      <% end %>
+      <%#= link_to "back", user_path, class:"btn btn-primary" %>
+    </div>
+  </div>
+</div>
+
+
+
+<%# <div class="container"> %>
 
 <!-- currently works properly in Chrome only, JS fallback required for IE/FF -->
 <%# <h1>CSS Range Slider</h1>
@@ -19,4 +30,4 @@
 <input type="range" value="0">
 <div id="h4-container"><div id="h4-subcontainer"><h4>0<span></span></h4></div></div> %>
 
-</div>
+<%# </div> %>
