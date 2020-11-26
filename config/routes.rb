@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   #Favorite is nested in SESSIONS and WORDS
 
   resources :users, only: [ :show ]
+
   resources :exercises, only: [ :new, :create, :show ] do
     resources :flashcards, only: [ :new, :create, :index, :show, :edit, :update ]
     resources :favorites, only: [ :create ]
