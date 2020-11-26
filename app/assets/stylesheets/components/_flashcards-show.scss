@@ -6,6 +6,14 @@
   align-items: center;
 }
 
+.flashcard-context {
+  position: relative;
+  /* left: 180px; */
+  top: 191px;
+  padding: 0 28px;
+  color: white;
+}
+
 .language-box-front {
   margin: 0;
 
@@ -22,11 +30,18 @@
   width: 83px;
   height: 83px;
   border-radius: 50%;
-
-  left: 94px;
-  top: 210px;
+  
+  position: relative;
+  left: 180px;
+  top: 134px;
   background: linear-gradient(180deg, #FFC598 4.81%, #EF4384 100%);
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+  p {
+    position: relative;
+    margin: 0;
+    left: 20px;
+  }
 }
 
 .none-border {
@@ -46,11 +61,14 @@
   text-align: center;
   color: $font-dark-gray;
   margin-top: 80px;
+  color: white;
 }
 
 .word-flashcard-front {
   text-align: center;
-  margin-top: 80px;
+  position: relative;
+  top: 84px;
+  color: white;
 }
 
 // IDs
