@@ -1,0 +1,5 @@
+<h1>show flashcard</h1>
+<%= @flashcard.exercise.category.name%>
+<%= @flashcard.word.word_requested %>
+<%= link_to "previous", exercise_flashcard_path(@exercise, @previous_flashcard), class:"btn btn-primary" %>
+<%= link_to "next", exercise_flashcard_path(@exercise, @next_flashcard), class:"btn btn-primary" %>

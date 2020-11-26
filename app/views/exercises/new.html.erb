@@ -1,18 +1,22 @@
 <div class="container">
   <h3>Prêt pour l'exercice </h3>
   <%= simple_form_for @exercise do |f| %>
-    <%= f.association :category, label: "Choisir une ou plusieurs catégories", 
-      as: :check_boxes,
+    <%= f.error_notification %>
+    <%= f.input :category, collection: Category.all, include_hidden: false, label: "Choisir une ou plusieurs catégories",
+      as: :radio_buttons,
       input_html: { class: "tag-selector" },
       item_wrapper_class: 'tag-item' %>
-    <%= f.input :words_count, label: "Nombres de flashcard", collection: [5, 10, 15, 20] %>
-    <%#= f.submit "Submit review", class: "btn btn-primary" %>
+    <%= f.input :words_count, label: "Nombres de flashcard", as: :range %>
+    <div id="h4-container"><div id="h4-subcontainer"><h4>0<span></span></h4></div></div>
+    <%#= f.input :words_count, label: "Nombres de flashcard", collection: [5, 10, 15, 20] %>
+    <%= f.submit "Débuter l'exercice", class: "btn btn-primary" %>
   <% end %>
+  <%#= link_to "back", user_path, class:"btn btn-primary" %>
 
-  <%# Choisir entre "apprendre" et "réviser" %>
-  <%# Choisir "all" ou une "catégories" %>
-  <%# Choisir de trvailler seullement sur les favoris => Check Box %>
-  <%# Sélectionner le nombre de carte à travailler %>
-  <%# Appuyer sur le bouton pour lancer l'exercice => Link_to %>
+<!-- currently works properly in Chrome only, JS fallback required for IE/FF -->
+<%# <h1>CSS Range Slider</h1>
+<h3>JS used for color-change and % label</h3>
+<input type="range" value="0">
+<div id="h4-container"><div id="h4-subcontainer"><h4>0<span></span></h4></div></div> %>
 
 </div>
