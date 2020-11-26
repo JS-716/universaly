@@ -1,5 +1,41 @@
-<h1>show flashcard</h1>
-<%= @flashcard.exercise.category.name%>
-<%= @flashcard.word.word_requested %>
-<%= link_to "previous", exercise_flashcard_path(@exercise, @previous_flashcard), class:"btn btn-primary" %>
-<%= link_to "next", exercise_flashcard_path(@exercise, @next_flashcard), class:"btn btn-primary" %>
+<div class="container">
+  <h2 class="title-flashcard-show"><%= @flashcard.exercise.category.name%></h2>
+  
+  <div class="row" id="row-flashcards-show">
+
+        <div class="card-container">
+          <div class="card none-border">
+
+            <div class="front">
+              <h1 class="word-flashcard-front"><%= @flashcard.word.word_requested %></h1>
+              <div class="language-box-front">
+                <p><%= @flashcard.word.language_requested.upcase %></p>
+              </div>
+              <div class="flashcard-context">
+                <h5>Extrait</h5>
+                <%= @flashcard.word.context_details %>
+              </div>
+            </div>
+
+            <div class="back">
+              <h1 class="word-flashcard-back"><%= @flashcard.word.word_translated.capitalize %></h1>
+              <div class="language-box-back">
+                <p><%= @flashcard.word.language_translated.upcase %></p>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+  </div>
+
+  <div class="container-btn-flashcards-show">
+    <div class="button-previous-flashcards"><%= link_to "Précédent", exercise_flashcard_path(@exercise, @previous_flashcard) %></div>
+    <div class="button-next-flashcards"><%= link_to "Suivant", exercise_flashcard_path(@exercise, @next_flashcard) %></div>
+  </div>
+
+  <div class="remaining-flashcards">
+  <%= "#{(@exercise.flashcards.index(@flashcard))+1}/#{@flashcard.exercise.words_count}" %>
+  </div>
+
+</div>

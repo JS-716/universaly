@@ -14,7 +14,7 @@ class FlashcardsController < ApplicationController
       @previous_flashcard = @exercise_flashcards[previous_index]
     end
     # bouton next
-    if @exercise_flashcards.last.id ==  @exercise_flashcards[-1].id
+    if @flashcard.id ==  @exercise_flashcards[-1].id
       next_index = @exercise_flashcards.index(@flashcard)
       @next_flashcard = @exercise_flashcards[next_index]
     else

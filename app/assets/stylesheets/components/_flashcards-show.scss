@@ -1,0 +1,63 @@
+// Classes
+.container-btn-flashcards-show {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.language-box-front {
+  margin: 0;
+
+  font-family: $body-font;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 32px;
+  line-height: 37px;
+
+  display: flex;
+  align-items: center;
+  color: #FFFFFF;
+      
+  width: 83px;
+  height: 83px;
+  border-radius: 50%;
+
+  left: 94px;
+  top: 210px;
+  background: linear-gradient(180deg, #FFC598 4.81%, #EF4384 100%);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.none-border {
+  background-color: transparent !important;
+  border: 0px solid rgba(0, 0, 0, 0) !important;
+}
+
+.remaining-flashcards {
+  text-align: center;
+}
+
+.title-flashcard-show {
+  text-align: center;
+}
+
+.word-flashcard-back {
+  text-align: center;
+  color: $font-dark-gray;
+  margin-top: 80px;
+}
+
+.word-flashcard-front {
+  text-align: center;
+  margin-top: 80px;
+}
+
+// IDs
+#row-flashcards-show {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
