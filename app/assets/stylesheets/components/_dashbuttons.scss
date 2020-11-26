@@ -7,6 +7,14 @@
   padding: 0px 50px;
   background: $yellow;
   color: $font-dark-gray;
+  -webkit-transform: scale(1.2);
+}
+
+.btnpractice:hover {
+  text-decoration: none;
+  color: inherit;
+  background: linear-gradient(90deg, #CD71DA 4.81%, #FF8982 100%);
+  font-size: 16px;
 }
 
 .btnbibli {
@@ -18,6 +26,15 @@
   padding: 0px 40px;
   background: $abricot;
   color: $font-dark-gray;
+  -webkit-transform: scale(1.2);
+
+}
+
+.btnbibli:hover {
+  text-decoration: none;
+  color: inherit;
+  background: linear-gradient(90deg, #CD71DA 4.81%, #6281E7 100%);
+  font-size: 16px;
 }
 
 #maternelle {
