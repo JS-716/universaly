@@ -1,15 +1,17 @@
-<%= link_to "Retour à la liste", words_path, class:"btn btn-link" %>
-
 <div class="container">
-  <h2 class="title-flashcard-show"><%= @word.category.name%></h2>
+
+  <div class="header-words-show">
+    <%= link_to "Retour à la liste", words_path, class:"btn btn-link" %>
+    <h2 class="title-flashcard-show"><%= @word.category.name%></h2>
+  </div>
   <div class="row" id="row-word-show-show">
         <div class="card-container-word">
-          <div class="card none-border">
-            <div class="front">
+          <div class="card none-border-words">
+            <div class="front-card-words-show">
                 <div class="div-card-word-requested">
                   <h1 class="word-show-front"><i class="fas fa-volume-up"></i><%= @word.word_requested %></h1>
                 </div>
-                <div class="div-card-word-translated">
+                <div class="div-card-word-translated none-border-words">
                   <h2 class="word-show-front"><%= @word.word_translated %></h2>
                   <hr>
                 </div>
