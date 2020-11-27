@@ -1,0 +1,127 @@
+// Classes
+.button-previous-flashcards {
+  position: relative;
+  left: 195px;
+}
+
+.button-next-flashcards {
+  position: relative;
+  right: 205px;
+}
+
+.container-btn-flashcards-show {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.flashcard-context {
+  position: relative;
+  /* left: 180px; */
+  top: 191px;
+  padding: 0 28px;
+  color: white;
+}
+
+.language-box-back {
+  margin: 0;
+
+  font-family: $body-font;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 32px;
+  line-height: 37px;
+
+  display: flex;
+  align-items: center;
+  color: #FFFFFF;
+      
+  width: 83px;
+  height: 83px;
+  border-radius: 50%;
+  
+  position: relative;
+  top: 71px;
+  left: 190px;
+  background: linear-gradient(180deg, #3D3F4F 0%, rgba(61, 63, 79, 0.53) 100%);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  p {
+    position: relative;
+    margin: 0;
+    left: 20px;
+  }
+}
+
+.language-box-front {
+  margin: 0;
+
+  font-family: $body-font;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 32px;
+  line-height: 37px;
+
+  display: flex;
+  align-items: center;
+  color: #FFFFFF;
+      
+  width: 83px;
+  height: 83px;
+  border-radius: 50%;
+  
+  position: relative;
+  left: 180px;
+  top: 134px;
+  background: linear-gradient(180deg, #FFC598 4.81%, #EF4384 100%);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+  p {
+    position: relative;
+    margin: 0;
+    left: 20px;
+  }
+}
+
+.none-border {
+  background-color: transparent !important;
+  border: 0px solid rgba(0, 0, 0, 0) !important;
+}
+
+.remaining-flashcards {
+  text-align: center;
+  display: relative;
+}
+
+.title-flashcard-show {
+  text-align: center;
+  margin: 50px 0;
+}
+
+.word-flashcard-back {
+  text-align: center;
+  color: $font-dark-gray;
+  margin-top: 80px;
+  color: white;
+}
+
+.word-flashcard-front {
+  text-align: center;
+  position: relative;
+  top: 84px;
+  color: white;
+}
+
+// IDs
+#row-flashcards-show {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#word-description-requested {
+    font-size: 18px;
+    text-align: justify;
+    line-height: 29px;
+  }
