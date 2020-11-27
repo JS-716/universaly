@@ -2,11 +2,11 @@
   <div class="divdash d-flex justify-content-around m-5">
     <!-- <div class="justify-content-start"> -->
       <div class=" oui d-flex align-items-center ">
-        <%= image_tag("Dashboard_drapeau.png", class: "drapeau")  %>
         <h4 id="maternelle">Langue maternelle</h4> <!-- + cl_image_tag(clé cloudinary) -->
+        <%= image_tag("Dashboard_drapeau.png", class: "drapeau")  %>
       </div>
       <!-- Button "Practice" -->
-        <%= link_to "Je pratique!", new_exercise_path, class: "btnpractice d-flex align-items-center"%>
+        <%= link_to "Je pratique", new_exercise_path, class: "btnpractice d-flex align-items-center"%>
 <!--         <button id="btnpractice" type="button">Je pratique!</button>
  -->      <!-- Button "Practice" -->
         <%= link_to "Ma bibliothèque", words_path, class: "btnbibli d-flex align-items-center"%>
