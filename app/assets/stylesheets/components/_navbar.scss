@@ -3,11 +3,11 @@ $nav-width-desktop : 40em;
 $nav-width-mobile  : 25em;
 $nav-item-nb       : 6;
 
-input {
+#navcheck {
   position: fixed;
   opacity: 0;
 }
-label {
+#navcheck-label {
   position: absolute;
   margin: 0;
   padding: 0;
@@ -64,8 +64,8 @@ label {
   }
 }
 
-input:focus + label,
-label:hover {
+#navcheck:focus + #navcheck-label,
+#navcheck-label:hover {
   .burger {
     opacity: .75;
   }
@@ -132,7 +132,7 @@ main {
 }
 
 [id="navcheck"]:checked {
-  & + label {
+  & + #navcheck-label {
     &::before {
       opacity: 1;
       pointer-events: auto;
