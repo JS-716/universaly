@@ -1,0 +1,64 @@
+// .div-card-word {
+//   margin-right: 350px;
+//   margin-left: 350px;
+//   border: 2px solid $font-light-gray;
+//   border-top-left-radius: 16px;
+//   border-top-right-radius: 16px;
+// }
+
+.button-previous-word {
+  position: relative;
+  left: 195px;
+}
+.button-next-word {
+  position: relative;
+  right: 205px;
+}
+.container-btn-words-show {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.word-show-context {
+  position: relative;
+  /* left: 180px; */
+  top: 191px;
+  padding: 0 28px;
+  color: white;
+}
+
+#row-word-show-show {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#word-show-description-requested {
+    font-size: 18px;
+    text-align: justify;
+    line-height: 29px;
+  }
+
+.card-container-word {
+//align-items: center;
+}
+
+.word-show-front {
+  text-align: center;
+  position: relative;
+  top: 84px;
+  color: white;
+}
+
+.div-card-word-translated {
+  margin-top: 60px;
+}
+
+.div-card-word-translated hr {
+  width: 120px;
+  margin-top: 15px;
+  background-color: white;
+}
+

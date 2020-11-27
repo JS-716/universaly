@@ -1,21 +1,37 @@
-<div class = "container">
-  <%= link_to "Retour à la liste", words_path, class:"btn btn-light rounded" %>
+<%= link_to "Retour à la liste", words_path, class:"btn btn-link" %>
 
-  <div class = "container-word-info">
-    <h2><%= @word.word_requested %></h2>
-    <hr>
-
-    <h3>TRADUCTION</h3>
-    <h2><%= @word.word_translated %></h2>
-
-    <h3>CONTEXTE DE LA TRADUCTION</h3>
-    <p><%= @word.context_details %></p>
+<div class="container">
+  <h2 class="title-flashcard-show"><%= @word.category.name%></h2>
+  <div class="row" id="row-word-show-show">
+        <div class="card-container-word">
+          <div class="card none-border">
+            <div class="front">
+                <div class="div-card-word-requested">
+                  <h1 class="word-show-front"><i class="fas fa-volume-up"></i><%= @word.word_requested %></h1>
+                </div>
+                <div class="div-card-word-translated">
+                  <h2 class="word-show-front"><%= @word.word_translated %></h2>
+                  <hr>
+                </div>
+              <div class="word-show-context">
+                <h5>Extrait</h5>
+                <p id="word-show-description-requested"><%= "~ #{@word.context_details} ~" %></p>
+              </div>
+            </div>
+          </div>
+        </div>
   </div>
 
-  <div class = "container-word-category">
-    <p><%= @word.category.name %></p>
+  <div class="container-btn-words-show">
+    <div class="button-previous-word">
+      <%= link_to word_path((@word.id-1)) do %>
+        <%= image_tag "btn_previous.png" %>
+      <% end %>
+    </div>
+    <div class="button-next-word">
+      <%= link_to word_path((@word.id+1)) do %>
+        <%= image_tag "btn_next.png" %>
+      <% end %>
+    </div>
   </div>
-
-  <%= link_to "Précédent", word_path((@word.id-1)), class:"btn btn-dark rounded" %>
-  <%= link_to "Suivant", word_path((@word.id+1)), class:"btn btn-dark rounded" %>
 </div>
