@@ -1,12 +1,13 @@
-#btnpractice {
+.btnpractice {
   height: 45px;
   width: 197px;
   left: 443px;
   top: 120px;
   border-radius: 20px;
-  padding: 12px, 13px, 12px, 13px;
+  padding: 0px 50px;
   background: $yellow;
   color: $font-dark-gray;
+  -webkit-transform: scale(1.2);
 }
 
 .btnpractice-library {
@@ -20,15 +21,24 @@
   color: $font-dark-gray;
 }
 
-#btnbibli {
+.btnbibli {
   height: 45px;
   width: 197px;
   left: 443px;
   top: 120px;
   border-radius: 20px;
-  padding: 12px, 13px, 12px, 13px;
+  padding: 0px 40px;
   background: $abricot;
   color: $font-dark-gray;
+  -webkit-transform: scale(1.2);
+
+}
+
+.btnbibli:hover {
+  text-decoration: none;
+  color: inherit;
+  background: linear-gradient(90deg, #CD71DA 4.81%, #6281E7 100%);
+  font-size: 16px;
 }
 
 #maternelle {
