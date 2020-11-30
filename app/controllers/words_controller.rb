@@ -16,14 +16,23 @@ class WordsController < ApplicationController
       sql_query = "progress ILIKE :query3"
       @words = @words.where(sql_query, query3: "%#{params[:search][:progress]}%")
     end
-
-     # if params[:search].present? && params[:search][:favorite].present?
-     #   sql_query = "favorite: :query4"
-     #   @words = @words.where(sql_query, query4: "%#{params[:search][:favorite]}%")
-     # end
-    end
+  end
 
   def show
     @word = Word.find(params[:id])
+  end
+
+  def new
+    @word = Word.new
+    # project_id = ENV["CLOUD_PROJECT_ID"]
+    # translate = Google::Cloud::Translate.new project: project_id
+    # @text = params[:search][:word]
+    # target = "fr"
+    # @translation = translate.translate text, to: target
+    #puts "Text: #{text}"
+    #puts "Translation: #{translation}"
+  end
+
+  def create
   end
 end
