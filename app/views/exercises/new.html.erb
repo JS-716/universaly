@@ -5,28 +5,18 @@
   <div class="exercise-container text-center border p-3 m-5">
     <div class="choise-exercise-container text-center text-exercices">
       <%= simple_form_for @exercise do |f| %>
+        <%= f.error_notification %>
         <%= f.input :category, collection: Category.all, include_hidden: false, label: "Choisir entre les catégories",
           as: :radio_buttons,
           input_html: { class: "tag-selector" },
           item_wrapper_class: 'tag-item' %>
-          <div class="slider-container">
-            <div class="slider">
-              <%# <input type = "range" min="0" max="50" step="0.5" onchange="rangevalue.value=value"/> %>
-              <%= f.input :words_count, label: "Choisir le nombres de flashcard", as: :range, min: "0", max: "20", value: "50", class: "slider", class: "myRange" %>
-	            <% <output :value ></output> %>
-            </div>
-          </div>
-        
-
+        <%= f.input :words_count, collection: [5, 10, 15, 20], label: "Choisir le nombre de flashcard",
+          as: :radio_buttons,
+          input_html: { class: "tag-selector" },
+          item_wrapper_class: 'tag-item' %>
         <%#= f.input :words_count, label: "Choisir le nombres de flashcard", as: :range %>
-        <%# <div id="h4-container">
-          <div id="h4-subcontainer">
-            <h4>0<span></span>
-            </h4>
-          </div>
-        </div> %>
-        <%#= f.input :words_count, label: "Nombres de flashcard", collection: [5, 10, 15, 20] %>
-        <%= f.submit "Débuter l'exercice", class: "btn-exercise"%>
+        <%# <div id="h4-container"><div id="h4-subcontainer"><h4>0<span></span></h4></div></div> %>
+        <%= f.submit "Débuter l'exercice", class: "btn-exercise" %>
       <% end %>
       <%#= link_to "back", user_path, class:"btn btn-primary" %>
     </div>
