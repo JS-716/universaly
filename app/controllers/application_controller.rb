@@ -4,5 +4,5 @@ end
 
 def default_url_options
   # { host: ENV["DOMAIN"] || "localhost:3000" }
-  { host: ENV["localhost:3000"] }
+  { host: "localhost:3000" }
 end
