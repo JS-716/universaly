@@ -14,16 +14,20 @@
   </head>
 
   <body class= "site-background">
-    <%# unless current_page?(controller: 'pages', action: 'home') %>
-    <%#= image_tag("Universaly_logo", class: "universaly-logo w-25") %>
-    <%# end %>
+    <div class="d-flex justify-content-center">
+      <% unless current_page?("/") %>
+       <%= image_tag("Universaly_logo", class: "universaly-logo w-25") %>
+      <% end %>
+    </div>
+
+
 
     <%= render 'shared/navbar' %>
     <%= render 'shared/flashes' %>
     <%= yield %>
-    <%# unless current_page?(controller: 'pages', action: 'home') %>
+    <% unless current_page?("/") %>
     <%= render 'shared/footer' %>
-    <%# end %>
+    <% end %>
   </body>
 
 </html>

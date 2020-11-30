@@ -1,4 +1,10 @@
 class ExercisesController < ApplicationController
+
+
+  def show
+    @exercice = Exercice.all
+  end
+
   def new
     @exercise = Exercise.new
   end

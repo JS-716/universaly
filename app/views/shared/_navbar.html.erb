@@ -9,7 +9,11 @@
 <nav id="menu">
   <%= image_tag("Avatar_Femme.png", class: "avatar")  %>
   <%= link_to "Universaly", root_path %>
-  <%#= link_to "Mon dashboard", user_path(current_user) %>
+  <% if current_user != nil %>
+    <%= link_to "Mon dashboard", user_path(current_user) %>
+  <% else %>
+    <%= link_to "Mon dashboard", root_path %>
+  <% end %>
   <%= link_to "Je pratique", new_exercise_path %>
   <%= link_to "Ma bibliothèque", words_path %>
   <a href="#">Mes paramètres</a>
