@@ -7,10 +7,10 @@
   </span>
 </label>
 <nav id="menu">
-  <a href="#">Universaly</a>
-  <%= link_to "Pratiquer", new_exercise_path %>
-  <%= link_to "M'entraîner", words_path %>
+  <%= image_tag("Avatar_Femme.png", class: "avatar")  %>
+  <%= link_to "Universaly", root_path %>
+  <%#= link_to "Mon dashboard", user_path(current_user) %>
+  <%= link_to "Je pratique", new_exercise_path %>
+  <%= link_to "Ma bibliothèque", words_path %>
   <a href="#">Mes paramètres</a>
-  <a href="#">Mes trophées</a>
-  <a href="#">Aide</a>
 </nav>
