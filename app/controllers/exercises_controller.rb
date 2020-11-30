@@ -6,10 +6,14 @@ class ExercisesController < ApplicationController
   def create
     @exercise = Exercise.new(exercise_params)
     @category = Category.find(params[:exercise][:category])
+    # [:exercise][:category] clé du hash
     @exercise.category = @category
+    # permet de mettre en lien exercice et category
     @exercise.user = current_user
+    # pour récupérer le curent user de l'exercice
     if @exercise.save
       @exercise.words_count.times do
+        # .times joue le bloc en fonction du nombre de flashcard .words_count
         word = @category.words.sample
         # reflechir comment ameliorer la logique, eviter les doublons
         Flashcard.create(word: word, exercise: @exercise)
@@ -19,16 +23,6 @@ class ExercisesController < ApplicationController
       render :new
     end
   end
-
-  # respond_to do |format|
-  #   if @article.save
-  #     format.html { redirect_to([@magazine,@article], :notice => 'Article was successfully created.') }
-  #     format.xml  { render :xml => @article, :status => :created, :location => @article }
-  #   else
-  #     format.html { render :action => "new" }
-  #     format.xml  { render :xml => @article.errors, :status => :unprocessable_entity }
-  #   end
-  # end
 
   private
 
