@@ -7,7 +7,6 @@
   </span>
 </label>
 <nav id="menu">
-  <%= image_tag("Avatar_Femme.png", class: "avatar")  %>
   <%= link_to "Universaly", root_path %>
   <% if current_user != nil %>
     <%= link_to "Mon dashboard", user_path(current_user) %>

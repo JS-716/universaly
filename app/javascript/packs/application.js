@@ -27,21 +27,33 @@ import "bootstrap";
 import $ from 'jquery';
 
 // Internal imports, e.g:
+import "../lib/btn-add";
+import "../lib/btn-validate";
 // import { initSelect2 } from '../components/init_select2';
+
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
+  // const results = document.querySelector('.results');
+  const toggleBodies = document.querySelectorAll('.toggle-body');
+  toggleBodies.forEach((toggleBody) => {
+    toggleBody.addEventListener("click", (event)=>{
+      const toggleBodiesOn = document.querySelectorAll('.toggle-body--on');
+      const total = toggleBodiesOn.length
+        if (total > 1) {
+          document.querySelector('#results').innerText = `Vous avez appris ${total} mots!`;
+        }
+        else {
+          document.querySelector('#results').innerText = `Vous avez appris ${total} mot!`;
+        }
+
+
+
+      // total.insertAdjacentHTML('beforeend', 'results');
+
+      // console.log(toggleBodiesOn.length);
+    })
+  });
 });
 
-$(function() {
-	var rangePercent = $('[type="range"]').val();
-	$('[type="range"]').on('change input', function() {
-		rangePercent = $('[type="range"]').val();
-		$('h4').html(rangePercent+'<span></span>');
-		$('[type="range"], h4>span').css('filter', 'hue-rotate(-' + rangePercent + 'deg)');
-		// $('h4').css({'transform': 'translateX(calc(-50% - 20px)) scale(' + (1+(rangePercent/100)) + ')', 'left': rangePercent+'%'});
-    $('h4').css({'transform': 'translateX(-50%) scale(' + (1+(rangePercent/100)) + ')', 'left': rangePercent+'%'});
-    // $('h4').css({'transform': 'translateX(-50%) scale(' + (1+(rangePercent/100)) + ')', 'left': rangePercent+'%'});
-	});
-});

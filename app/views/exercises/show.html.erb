@@ -1,0 +1,39 @@
+<div class="main-container-results m-5 d-flex flex-column align-items-center">
+  <div class="congrats d-flex justify-content-center">
+    <h3>Félicications! Quels sont les mots que vous avez retenus?</h3>
+  </div>
+  <!-- <div class="words border d-flex justify-content-center">
+    <h3>Quels sont les mots que vous avez retenus?</h3>
+  </div> -->
+  <div class="new-words">
+      <% @exercise.flashcards.each do |flashcard| %>
+        <div class=" word1 d-flex justify-content-between">
+          <div>
+            <p class="wordfrench"> <%= flashcard.word.word_requested %> </p>
+          </div>
+          <div>
+            <p class="wordfrench"> <%= flashcard.word.word_translated %> </p>
+          </div>
+        <div class="background2">
+          <div class="toggle-body">
+          <div class="toggle-btn"></div>
+        </div>
+        </div>
+      </div>
+      <% end %>
+  </div>
+  <div class="congrats d-flex justify-content-center">
+    <h3 id="results"></h3>
+  </div>
+  <div class>
+  <%#= link_to "Mon dashboard", user_path(current_user), class: "button-confettis" %>
+    <button class="button-confettis" data-confettis>J'ai fini</button>
+  </div>
+</div>
+
+
+
+
+
+
+
