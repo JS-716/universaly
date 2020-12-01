@@ -5,14 +5,13 @@
   <div class="exercise-container text-center border p-3 m-5">
     <div class="choise-exercise-container text-center text-exercices">
       <%= simple_form_for @exercise do |f| %>
-        <%= f.error_notification %>
-        <%= f.input :category, collection: Category.all, include_hidden: false, label: "Choisir entre les catégories",
+        <%= f.input :category, collection: Category.all, include_hidden: false, label: "Choisir entre les catégories", error: "Catégorie obligatoire",
           as: :radio_buttons,
-          input_html: { class: "tag-selector" },
+          input_html: { class: "tag-selector-categories" },
           item_wrapper_class: 'tag-item' %>
-        <%= f.input :words_count, collection: [5, 10, 15, 20], label: "Choisir le nombre de flashcard",
+        <%= f.input :words_count, collection: [5, 10, 15, 20], label: "Choisir le nombre de flashcard", error: "Nombres obligatoire",
           as: :radio_buttons,
-          input_html: { class: "tag-selector" },
+          input_html: { class: "tag-selector-flashcard" },
           item_wrapper_class: 'tag-item' %>
         <%#= f.input :words_count, label: "Choisir le nombres de flashcard", as: :range %>
         <%# <div id="h4-container"><div id="h4-subcontainer"><h4>0<span></span></h4></div></div> %>

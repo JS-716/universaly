@@ -2,12 +2,12 @@
   display: inline-block;
   }
 
-.tag-selector {
+.tag-selector-categories {
   position: absolute;
   transform: scale(0);
 }
 
-.tag-selector + label {
+.tag-selector-categories + label {
   cursor: pointer;
   display: inline-block;
   width: 170px;
@@ -17,7 +17,7 @@
   display: inline-block;
   line-height: 60px;
   font-size: 20px;
-  border-radius: 30px;
+  border-radius: 50px;
   padding: 0.2rem 0.5rem;
   //background: linear-gradient(90deg, #CD71DA 4.81%, #6281E7 100%);
   background: linear-gradient(90deg, #CD71DA 4.81%, #FF8982 100%);
@@ -31,7 +31,7 @@
   //margin-bottom: 20px;
 }
 
-.tag-selector:checked + label {
+.tag-selector-categories:checked + label {
   //background: linear-gradient(90deg, #CD71DA 4.81%, #FF8982 100%);
   background: linear-gradient(90deg, #CD71DA 4.81%, #6281E7 100%);
   box-shadow: 0px 4px 4px rgba(255, 255, 255, 0.1);
@@ -40,7 +40,6 @@
   color: white;
   //border: 2px solid black;
 }
-
 
 .tag-selector-small + label {
   cursor: pointer;
@@ -56,4 +55,32 @@
   background: linear-gradient(90deg, #CD71DA 4.81%, #FF8982 100%);
   box-shadow: 0px 4px 4px rgba(255, 255, 255, 0.1);
   color: #4A4949;
+}
+
+.tag-selector-flashcard {
+  position: absolute;
+  transform: scale(0);
+}
+
+.tag-selector-flashcard + label {
+  cursor: pointer;
+  display: inline-block;
+  width: 170px;
+  height: 70px;
+  margin: 10px 30px 20px 0px;
+  padding: 0;
+  display: inline-block;
+  line-height: 60px;
+  font-size: 20px;
+  border-radius: 50px;
+  padding: 0.2rem 0.5rem;
+  background: linear-gradient(90deg, #FFC598 4.81%, #EF4384 100%);
+  box-shadow: 0px 4px 4px rgba(255, 255, 255, 0.1);
+  color: white;
+}
+
+.tag-selector-flashcard:checked + label {
+  background: linear-gradient(90deg, #CD71DA 4.81%, #6281E7 100%);
+  box-shadow: 0px 4px 4px rgba(255, 255, 255, 0.1);
+  color: white;
 }
