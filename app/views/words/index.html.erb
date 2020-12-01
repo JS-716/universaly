@@ -45,8 +45,7 @@
     <% @words.each do |word| %>
     <tbody>
       <tr>
-<!--         <td><%#= link_to word["word_requested"], word_path(word)%></td>
- -->    <td><%= word.word_requested %></td>
+        <td><%= link_to word["word_requested"], word_path(word)%></td>
         <td><%= word.word_translated %></td>
         <td><%= word.category.name %></td>
 
