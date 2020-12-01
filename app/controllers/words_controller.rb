@@ -16,6 +16,10 @@ class WordsController < ApplicationController
       sql_query = "progress ILIKE :query3"
       @words = @words.where(sql_query, query3: "%#{params[:search][:progress]}%")
     end
+
+    if params[:search].present? && params[:search][:favorite].present?
+      @words = @words.where(favorite: params[:search][:favorite])
+    end
   end
 
   def show
