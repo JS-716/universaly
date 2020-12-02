@@ -1,22 +1,32 @@
 <div class="main-container-dashboard">
   <div class="divdash d-flex justify-content-around m-5">
-    <!-- <div class="justify-content-start"> -->
-      <div class=" oui d-flex align-items-center ">
-        <h4 id="maternelle">Langue maternelle</h4> <!-- + cl_image_tag(clé cloudinary) -->
+
+      <div class=" oui d-flex align-items-center">
+        <h4 id="maternelle">Langue maternelle</h4>
         <%= image_tag("Dashboard_drapeau.png", class: "drapeau")  %>
       </div>
       <!-- Button "Practice" -->
         <%= link_to "Je pratique", new_exercise_path, class: "btnpractice d-flex align-items-center"%>
-<!--         <button id="btnpractice" type="button">Je pratique!</button>
- -->      <!-- Button "Practice" -->
         <%= link_to "Ma bibliothèque", words_path, class: "btnbibli d-flex align-items-center"%>
-        <!-- <button id="btnbibli" type="button">Ma bibliothèque!</button> -->
-    <!-- </div>-->
   </div>
-  <!--   <div class="justify-content-end">
-  </div> -->
+  <div id="app-cover">
+    <div id="app">
+      <form method="get" action="">
+        <div id="f-element">
+          <div id="inp-cover">
+            <input type="text" name="query" placeholder="Écris un mot en français ..." autocomplete="off">
+          </div>
+        </div>
+        <button type="submit" class="shadow">
+          <i class="fas fa-plus"></i>
+        </button>
+      </form>
+    </div>
+    <div id="layer" title="Click the blue area to hide the form"></div>
+    <div id="init"></div>
+  </div>
 
-  <div class="divdash border p-3 m-5">
+  <div class="divdash1 border p-3 m-5">
     <div class="d-flex row">
       <%= image_tag("Dashboard_stats.png", class: "fusee")  %>
       <h2 class="stats">Statistiques</h2>
@@ -114,8 +124,8 @@
         <button id="btn-cat4" type="button">très</button>
         <button id="btn-cat5" type="button">et</button>
         <button id="btn-cat6" type="button">toi</button> -->
-        <button id="btn-cat7" type="button"></button>
-        <button id="btn-cat8" type="button"></button>
+       <!--  <button id="btn-cat7" type="button"></button>
+        <button id="btn-cat8" type="button"></button> -->
       </div>
       <div class="d-flex justify-content-center">
         <%= link_to "Voir plus...", words_path, id: "VoirPlus"%>
@@ -124,3 +134,5 @@
     </div>
   </div>
 </div>
+
+

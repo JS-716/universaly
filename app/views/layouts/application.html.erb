@@ -28,16 +28,25 @@
   </head>
 
   <body class= "site-background">
-    <%# unless current_page?(controller: 'pages', action: 'home') %>
-    <%#= image_tag("Universaly_logo", class: "universaly-logo w-25") %>
-    <%#end %>
+
+    <div class="d-flex justify-content-center">
+      <% unless current_page?("/") %>
+       <%= image_tag("Universaly_logo", class: "universaly-logo") %>
+      <% end %>
+    </div>
+    <div class="d-flex justify-content-end  ">
+      <% unless current_page?("/") %>
+       <%= image_tag("Avatar_Femme.png", class: "avatar") %>
+      <% end %>
+    </div>
 
     <%= render 'shared/navbar' %>
     <%= render 'shared/flashes' %>
     <%= yield %>
-    <%# unless current_page?(controller: 'pages', action: 'home') %>
-    <%= render 'shared/footer' %>
-    <%# end %>
+
+    <% unless current_page?("/") %>
+       <%= render 'shared/footer' %>
+    <% end %>
   </body>
 
 </html>

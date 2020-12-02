@@ -1,4 +1,5 @@
 .btnpractice {
+  justify-content:center;
   height: 45px;
   width: 197px;
   left: 443px;
@@ -22,6 +23,7 @@
 }
 
 .btnbibli {
+  justify-content: center;
   height: 45px;
   width: 197px;
   left: 443px;
@@ -32,6 +34,13 @@
   color: $font-dark-gray;
   -webkit-transform: scale(1.2);
 
+}
+
+.btnpractice:hover {
+  text-decoration: none;
+  color: inherit;
+  background: linear-gradient(90deg, #CD71DA 4.81%, #6281E7 100%);
+  font-size: 16px;
 }
 
 .btnbibli:hover {
