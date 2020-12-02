@@ -1,46 +1,69 @@
 <div class="main-container-library p-3 ml-5 mt-4 mr-5">
   <h1>Mots enregistrés sur Universaly</h1>
-  <p><%= @words.count %> mots</p>
   <hr>
 </div>
 
-<div class="container-library-search d-flex justify-content-left p-3 ml-5 mr-5">
+<div class="container-library-search d-flex justify-content-center p-3 ml-5 mr-5">
   <%= simple_form_for :search, url: words_path, method: :get, class: "form-inline" do |f| %>
     <div class="container-library-search-word d-flex justify-content-between">
-      <%= f.input :word, placeholder: "Rechercher un mot..."%>
-      <%= f.input :favorite, as: :radio_buttons %>
-      <%= f.input :progress,  collection: Word::PROGRESS, include_hidden: false, label: "Choisir le niveau d'apprentissage", as: :radio_buttons, input_html: { class: "tag-selector-small" }, item_wrapper_class: 'tag-item' %>
+      <div class="container-library-search-word-search">
+        <%= f.input :word, label: "Rechercher un mot", placeholder: "Investment,..."%>
+      </div>
+      <div class="container-library-search-word-favorite">
+        <%= f.input :favorite, label: "Favoris ?", as: :check_boxes, input_html: { class: "checkbox" } %>
+      </div>
+      <div class="container-library-search-word-progress">
+        <%= f.input :progress,  collection: Word::PROGRESS, include_hidden: false, label: "Choisir le niveau d'apprentissage", as: :radio_buttons, input_html: { class: "tag-selector-small" }, item_wrapper_class: 'tag-item' %>
+      </div>
     </div>
-    <div class="container-library-search-word d-flex justify-content-between">
-      <%= f.input :category_id, collection:Category.all, include_hidden: false, label: "Choisir une catégorie", as: :radio_buttons, input_html: { class: "tag-selector-small" }, item_wrapper_class: 'tag-item' %>
-    </div>
-    <div class="container-library-search-word d-flex justify-content-between">
-      <%= f.submit "Search", class: "btnpractice-library" %>
-      <% end %>
-    </div>
+      <div class="container-library-search-word-category d-flex justify-content-between">
+        <%= f.input :category_id, collection:Category.all, include_hidden: false, label: "Choisir une catégorie", as: :radio_buttons, input_html: { class: "tag-selector-small" }, item_wrapper_class: 'tag-item' %>
+      </div>
+      <div class="container-library-search-word d-flex justify-content-center mt-3 mb-3">
+        <%= f.submit "Search", class: "btnpractice-library" %>
+        <% end %>
+      </div>
 </div>
 
-<div class="container-library-details row justify-content-center p-3 ml-5 mr-5">
-  <table class="table table-striped">
-    <thead><tr>
-    <th>Anglais</th>
-    <th>Français</th>
-    <th>Catégorie</th>
-    <th>Progrès</th>
-    <th>Favoris</th>
-    </tr>
+<div class="container d-flex justify-content-left">
+  <div>
+    <p> Résultats : <%= @words.count %> mots</p>
+  </div>
+</div>
+
+  <table class="container-table">
+    <thead>
+      <tr>
+        <th id="th-round-left"><h2>Anglais</h2></th>
+        <th><h2>Français</h2></th>
+        <th><h2>Catégorie</h2></th>
+        <th><h2>Progrès</h2></th>
+        <th id="th-round-right"><h2>Favoris</h2></th>
+      </tr>
     </thead>
 
-  <% @words.each do |word| %>
-    <tbody><tr>
-      <td><i class="fas fa-external-link-alt"></i><%= link_to word["word_requested"], word_path(word)%></td>
-      <td><%= word.word_translated %></td>
-      <td><%= word.category.name %></td>
-      <td><%= word.progress %></td>
-      <td><%= word.favorite %></td>
-      <%#= link_to  "Supprimer", word_path(word), method: :delete, data: {confirm: "Are you sure"}  %>
-    </tr>
-    <% end %>
+    <% @words.each do |word| %>
+    <tbody>
+      <tr>
+        <td><%= link_to word["word_requested"], word_path(word)%></td>
+        <td><%= word.word_translated %></td>
+        <td><%= word.category.name %></td>
+
+      <% if word.progress == "Nouveau" %>
+        <td><%= image_tag("progress-new.png", class: "coupe")%></td>
+      <% elsif word.progress == "En cours" %>
+        <td><%= image_tag("progress-en-cours.png", class: "coupe")%></td>
+      <% else word.progress == "Appris" %>
+        <td><%= image_tag("progress-appris.png", class: "coupe")%></td>
+      <% end %>
+
+      <% if word.favorite == true %>
+        <td><%= image_tag("favorite-true.png", class: "coupe")%></td>
+      <% else word.favorite == false %>
+        <td><%= image_tag("favorite-false.png", class: "coupe")%></td>
+      <% end %>
+        <%#= link_to  "Supprimer", word_path(word), method: :delete, data: {confirm: "Are you sure"}  %>
+      </tr>
+      <% end %>
     </tbody>
   </table>
-</div>

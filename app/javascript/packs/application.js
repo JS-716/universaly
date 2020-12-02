@@ -27,21 +27,52 @@ import "bootstrap";
 import $ from 'jquery';
 
 // Internal imports, e.g:
+  import { btnValidate } from "../lib/btn-validate";
+  import { flashcardMatching } from "../lib/flashcards-index";
 // import { initSelect2 } from '../components/init_select2';
+
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
+    btnValidate();
+
+    $(function()
+    {
+        var app = $('#app'), init = $('#init'), layer = $('#layer'), input = $('#inp-cover input'), button = $('button');
+
+        function toggleApp()
+        {
+            app.toggleClass('opened');
+
+            if( button.hasClass('shadow') )
+                button.toggleClass('shadow');
+            else
+                setTimeout(function(){ button.toggleClass('shadow'); },300);
+
+            if( app.hasClass('opened') )
+            {
+                setTimeout(function(){ input.toggleClass('move-up'); },200);
+                setTimeout(function(){ input.focus(); },500);
+            }
+            else
+                setTimeout(function(){ input.toggleClass('move-up').val(''); },200);
+
+            if( ! layer.hasClass('sl') )
+            {
+                setTimeout(function()
+                {
+                    layer.addClass('sl');
+                },800);
+            }
+            else
+                setTimeout(function(){ layer.removeClass('sl'); },300);
+        }
+
+        layer.on('click',toggleApp);
+        init.on('click',toggleApp);
+    });
+
+	flashcardMatching();
 });
 
-$(function() {
-	var rangePercent = $('[type="range"]').val();
-	$('[type="range"]').on('change input', function() {
-		rangePercent = $('[type="range"]').val();
-		$('h4').html(rangePercent+'<span></span>');
-		$('[type="range"], h4>span').css('filter', 'hue-rotate(-' + rangePercent + 'deg)');
-		// $('h4').css({'transform': 'translateX(calc(-50% - 20px)) scale(' + (1+(rangePercent/100)) + ')', 'left': rangePercent+'%'});
-    $('h4').css({'transform': 'translateX(-50%) scale(' + (1+(rangePercent/100)) + ')', 'left': rangePercent+'%'});
-    // $('h4').css({'transform': 'translateX(-50%) scale(' + (1+(rangePercent/100)) + ')', 'left': rangePercent+'%'});
-	});
-});
