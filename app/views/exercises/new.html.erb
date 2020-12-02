@@ -1,18 +1,21 @@
 <div class="container">
-  <div class="title-exercise-container text-center border p-3 m-5 titreh3">
-    <h3>Prêt pour l'exercice</h3>
+  <div class="title-exercise-container text-center border p-3 m-5 titre-exercise">
+    <h1>Prêt pour l'exercice</h1>
   </div>
   <div class="exercise-container text-center border p-3 m-5">
     <div class="choise-exercise-container text-center text-exercices">
       <%= simple_form_for @exercise do |f| %>
-        <%= f.input :category, collection: Category.all, include_hidden: false, label: "Choisir entre les catégories",
+        <%= f.input :category, collection: Category.all, include_hidden: false, label: "Choisir entre les catégories", error: "Catégorie obligatoire",
           as: :radio_buttons,
-          input_html: { class: "tag-selector" },
+          input_html: { class: "tag-selector-categories" },
           item_wrapper_class: 'tag-item' %>
-        <%= f.input :words_count, label: "Choisir le nombres de flashcard", as: :range %>
-        <div id="h4-container"><div id="h4-subcontainer"><h4>0<span></span></h4></div></div>
-        <%#= f.input :words_count, label: "Nombres de flashcard", collection: [5, 10, 15, 20] %>
-        <%= f.submit "Débuter l'exercice", class: "btn-exercise"%>
+        <%= f.input :words_count, collection: [5, 10, 15, 20], label: "Choisir le nombre de flashcard", error: "Nombres obligatoire",
+          as: :radio_buttons,
+          input_html: { class: "tag-selector-flashcard" },
+          item_wrapper_class: 'tag-item' %>
+        <%#= f.input :words_count, label: "Choisir le nombres de flashcard", as: :range %>
+        <%# <div id="h4-container"><div id="h4-subcontainer"><h4>0<span></span></h4></div></div> %>
+        <%= f.submit "Débuter l'exercice", class: "btn-exercise" %>
       <% end %>
       <%#= link_to "back", user_path, class:"btn btn-primary" %>
     </div>

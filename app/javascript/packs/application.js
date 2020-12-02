@@ -28,9 +28,7 @@ import $ from 'jquery';
 
 // Internal imports, e.g:
   import { btnValidate } from "../lib/btn-validate";
-
-// import "../lib/btn-add";
-// import "../lib/btn-validate";
+  import { flashcardMatching } from "../lib/flashcards-index";
 // import { initSelect2 } from '../components/init_select2';
 
 
@@ -39,43 +37,42 @@ document.addEventListener('turbolinks:load', () => {
   // initSelect2();
     btnValidate();
 
-$(function()
-{
-    var app = $('#app'), init = $('#init'), layer = $('#layer'), input = $('#inp-cover input'), button = $('button');
-
-    function toggleApp()
+    $(function()
     {
-        app.toggleClass('opened');
+        var app = $('#app'), init = $('#init'), layer = $('#layer'), input = $('#inp-cover input'), button = $('button');
 
-        if( button.hasClass('shadow') )
-            button.toggleClass('shadow');
-        else
-            setTimeout(function(){ button.toggleClass('shadow'); },300);
-
-        if( app.hasClass('opened') )
+        function toggleApp()
         {
-            setTimeout(function(){ input.toggleClass('move-up'); },200);
-            setTimeout(function(){ input.focus(); },500);
-        }
-        else
-            setTimeout(function(){ input.toggleClass('move-up').val(''); },200);
+            app.toggleClass('opened');
 
-        if( ! layer.hasClass('sl') )
-        {
-            setTimeout(function()
+            if( button.hasClass('shadow') )
+                button.toggleClass('shadow');
+            else
+                setTimeout(function(){ button.toggleClass('shadow'); },300);
+
+            if( app.hasClass('opened') )
             {
-                layer.addClass('sl');
-            },800);
+                setTimeout(function(){ input.toggleClass('move-up'); },200);
+                setTimeout(function(){ input.focus(); },500);
+            }
+            else
+                setTimeout(function(){ input.toggleClass('move-up').val(''); },200);
+
+            if( ! layer.hasClass('sl') )
+            {
+                setTimeout(function()
+                {
+                    layer.addClass('sl');
+                },800);
+            }
+            else
+                setTimeout(function(){ layer.removeClass('sl'); },300);
         }
-        else
-            setTimeout(function(){ layer.removeClass('sl'); },300);
-    }
 
-    layer.on('click',toggleApp);
-    init.on('click',toggleApp);
-});
+        layer.on('click',toggleApp);
+        init.on('click',toggleApp);
+    });
 
-
-
+	flashcardMatching();
 });
 

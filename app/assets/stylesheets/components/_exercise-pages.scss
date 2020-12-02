@@ -1,36 +1,58 @@
 .title-exercise-container {
-    border-radius: 10px;
+    border-radius: 30px;
     color: white;
   }
 
 .exercise-container {
-  border-radius: 10px;
+  border-radius: 30px;
   color: white;
 }
 
-.titreh3 {
+.titre-exercise {
   color: $font-light-gray;
 }
 
 .text-exercices {
   color: $font-light-gray;
+  font-size: 23px;
+  margin-bottom: 20px;
 }
 
 .btn-exercise {
-  width: 197px;
-  height: 45px;
-  left: 419px;
-  top: 707px;
-
+  color: $font-dark-gray;
+  padding: 8px 24px;
+  border-radius: 4px;
   background: $yellow-home;
-  box-shadow: 0px 4px 4px rgba(255, 255, 255, 0.1);
   border-radius: 20px;
-    a {
-      display: inline-block;
-      text-decoration: none;
-      color: $font-dark-gray;
-    }
+  border: black;
+  transition: background 0.3s ease;
 }
+
+//$font-light-gray: #C5C5C5;
+//$font-dark-gray: #4A4949;
+
+.btn-exercise:hover {
+  background: linear-gradient(90deg, #CD71DA 4.81%, #6281E7 100%);
+  color: white;
+}
+
+// .btn-exercise {
+//   width: 197px;
+//   height: 45px;
+//   left: 419px;
+//   top: 707px;
+//   margin-top: 20px;
+//   margin-bottom: 20px;
+
+//   background: $yellow-home;
+//   box-shadow: 0px 4px 4px rgba(255, 255, 255, 0.1);
+//   border-radius: 20px;
+//     a {
+//       display: inline-block;
+//       text-decoration: none;
+//       color: $font-dark-gray;
+//     }
+// }
 
 #input-exercise {
   margin: auto;
