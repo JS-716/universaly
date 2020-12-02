@@ -1,7 +1,29 @@
-.bg-green {
+.flashcards-bg-green {
   background-color: green;
 }
 
-.bg-white {
+.flashcards-bg-white {
   background-color: transparent;
+}
+
+.flashcards-column1 {
+  display: flex;
+  flex-direction: column;
+}
+
+.flashcards-column2 {
+  display: flex;
+  flex-direction: column;
+}
+
+/* .flashcards-form {
+  display: none;
+} */
+
+.flashcards-matching-game {
+  display: flex;
+}
+
+.flashcards-requested-buttons {
+  
 }
