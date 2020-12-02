@@ -20,11 +20,12 @@
 
 .btn-exercise {
   color: $font-dark-gray;
+  width: auto;
+  margin: auto;
   padding: 8px 24px;
-  border-radius: 4px;
   background: $yellow-home;
-  border-radius: 20px;
-  border: black;
+  border-radius: 30px;
+  //border: black;
   transition: background 0.3s ease;
 }
 
@@ -57,3 +58,4 @@
 #input-exercise {
   margin: auto;
 }
+
