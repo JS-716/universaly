@@ -27,6 +27,8 @@
 
 # Ignore master key for decrypting credentials and more.
 /config/master.key
+/config/local_env.yml
+/config/google_cloud.json
 
 /public/packs
 /public/packs-test
@@ -39,3 +41,4 @@ yarn-debug.log*
 # Ignore Mac and Linux file system files
 *.swp
 .DS_Store
+.env*
