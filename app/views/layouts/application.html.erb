@@ -1,11 +1,25 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Universaly</title>
+    <%# <title>Universaly</title> %>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
     <meta charset="utf-8" />
+
+    <title><%= meta_title %></title>
+    <meta name="description" content="<%= meta_description %>">
+
+    <!-- Facebook Open Graph data -->
+    <meta property="og:title" content="<%= meta_title %>" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="<%= request.original_url %>" />
+    <meta property="og:image" content="<%= meta_image %>" />
+    <meta property="og:description" content="<%= meta_description %>" />
+    <meta property="og:site_name" content="<%= meta_title %>" />
+
+    <!-- Favicon -->
+    <%= favicon_link_tag 'favicon.ico'%>
 
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -21,9 +35,9 @@
     <%= render 'shared/navbar' %>
     <%= render 'shared/flashes' %>
     <%= yield %>
-    <% unless current_page?(controller: 'pages', action: 'home') %>
+    <%# unless current_page?(controller: 'pages', action: 'home') %>
     <%= render 'shared/footer' %>
-    <% end %>
+    <%# end %>
   </body>
 
 </html>
