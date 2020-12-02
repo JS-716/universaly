@@ -13,7 +13,7 @@ Rails.application.routes.draw do
     resources :flashcards, only: [ :new, :create, :index, :show, :edit, :update ]
     resources :favorites, only: [ :create ]
   end
-  resources :words, only: [ :create, :index, :show, :update, :destroy] do
+  resources :words, only: [ :new, :create, :index, :show, :update, :destroy] do
     resources :categories, only: [ :create, :update, :destroy ]
     resources :favorites, only: [ :create ]
   end

@@ -9,7 +9,7 @@
           <div class="card none-border-words">
             <div class="front-card-words-show">
                 <div class="div-card-word-requested">
-                  <h1 class="word-show-front"><i class="fas fa-volume-up"></i><%= @word.word_requested %></h1>
+                  <h1 class="word-show-front"><%= @word.word_requested %>    <i class="fas fa-volume-up"></i></h1>
                 </div>
                 <div class="div-card-word-translated none-border-words">
                   <h2 class="word-show-front"><%= @word.word_translated %></h2>
@@ -19,6 +19,7 @@
                 <h5>Extrait</h5>
                 <p id="word-show-description-requested"><%= "~ #{@word.context_details} ~" %></p>
               </div>
+
             </div>
           </div>
         </div>
