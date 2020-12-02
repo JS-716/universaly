@@ -1,0 +1,71 @@
+// $green: #A3CD99;
+// $darkgreen: #579E81;
+// //background: linear-gradient(90deg, #FFC598 4.81%, #EF4384 100%);
+// //box-shadow: 0px 4px 4px rgba(255, 255, 255, 0.1);
+
+// .slider-container {
+//     display: flex;
+//     width: 500px;
+//     height: 500px;
+//     margin: auto;
+//     text-align: center;
+// }
+  
+// .slider {
+//     width: 100%;
+//     margin: 50% auto;
+// }
+
+// input[type="range"] {
+//     -webkit-appearance: none !important; /*Needed to reset default slider styles */
+//     width: 100%;
+//     height: 15px;
+//     //background-color: $green;
+//     background: linear-gradient(90deg, #FFC598 4.81%, #EF4384 100%);
+//     border: 1px solid black;
+//     border-radius: 10px;
+//     margin: auto;
+//     transition: all 0.3s ease;
+  
+  
+     
+//     &:hover {
+//       background-color: lighten($green, 5%);
+//     }
+    
+//     &:active + #rangevalue {
+
+//     } /*Here to do something to the value while moving the slider */
+// }
+
+  
+// input[type="range"]::-webkit-slider-thumb {
+//     -webkit-appearance: none !important;  
+//     width: 20px;
+//     height: 20px;
+//     background-color: blueviolet;
+//     border-radius: 30px;
+//     box-shadow: 0px 0px 3px black;
+//     transition: all 0.5s ease;
+  
+    
+//     &:hover {
+//         background-color: darken($font-light-gray, 10%);
+//     }
+    
+//     &:active {
+//         box-shadow: 0px 0px 1px darken($font-light-gray, 15%);
+//     }
+// }
+
+// #rangevalue {
+//     text-align: center;
+//     font-family: 'Quantico', sans-serif;
+//     font-size: 18px;
+//     display: block;
+//     margin: auto;
+//     padding: 10px 0px; 
+//     width: 100%;
+//     color: $font-light-gray; 
+// }
+
