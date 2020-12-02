@@ -1,7 +1,9 @@
+require 'pry-byebug'
+
 class WordsController < ApplicationController
   def index
     @words = Word.all
-  
+
     if params[:search].present? && params[:search][:word].present?
       sql_query = "word_requested ILIKE :query1 OR word_translated ILIKE :query1"
       @words = @words.where(sql_query, query1: "%#{params[:search][:word]}%")
@@ -16,7 +18,7 @@ class WordsController < ApplicationController
       sql_query = "progress ILIKE :query3"
       @words = @words.where(sql_query, query3: "%#{params[:search][:progress]}%")
     end
-  
+
     if params[:search].present? && params[:search][:favorite].reject{|value| value == ""}[0].present?
       @words = @words.where(favorite: params[:search][:favorite].reject{|value| value == ""}[0])
     end
@@ -28,15 +30,28 @@ class WordsController < ApplicationController
 
   def new
     @word = Word.new
-    # project_id = ENV["CLOUD_PROJECT_ID"]
-    # translate = Google::Cloud::Translate.new project: project_id
-    # @text = params[:search][:word]
-    # target = "fr"
-    # @translation = translate.translate text, to: target
-    #puts "Text: #{text}"
-    #puts "Translation: #{translation}"
+    @categories = Category.all
   end
 
   def create
+    @word = Word.new
+    @word.word_requested = params[:word][:word_requested]
+    @word.language_requested = 'EN'
+    @word.language_translated = 'FR'
+    @word.word_translated = (DeepL.translate @word_requested, @language_requested, @language_translated).text
+    @word.progress = 'Nouveau'
+    #@favorite = false
+    @word.user = current_user
+    @word.category = params[:word][:category_id]
+    if @word.save
+      redirect_to word_path
+    else
+      render 'words/index'
+    end
   end
 end
+
+# private
+#   def word_params
+#     # params.require(:word).permit([:word_requested, :language_requested, :language_translated, :language_requested, :word_translated])
+#   end
