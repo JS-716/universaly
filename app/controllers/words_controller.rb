@@ -1,5 +1,3 @@
-require 'pry-byebug'
-
 class WordsController < ApplicationController
   def index
     @words = Word.all
