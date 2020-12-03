@@ -7,8 +7,8 @@ const flashcardMatching = () => {
   /* console.log(formTranslatedPosition) */
 
   // put in an array all btns for each column
-  const requestedButtons = document.querySelectorAll('.requested-buttons');
-  const translatedButtons = document.querySelectorAll('.translated-buttons');
+  const requestedButtons = document.querySelectorAll('.flashcards-requested-buttons');
+  const translatedButtons = document.querySelectorAll('.flashcards-translated-buttons');
 
   // select the form
   const positionsForm = document.querySelector('form');
@@ -19,9 +19,9 @@ const flashcardMatching = () => {
   requestedButtons.forEach( (requestedButton) => {
     requestedButton.addEventListener( 'click', (event) => {
       const requestedSavedPosition = requestedButton.dataset.requestedPosition
-      /* console.log(requestedButton.dataset.requestedPosition) */
+      console.log(requestedButton.dataset.requestedPosition)
       formRequestedPosition.value = requestedSavedPosition
-      /* console.log(formRequestedPosition) */
+      console.log(formRequestedPosition)
     });
   });
 
