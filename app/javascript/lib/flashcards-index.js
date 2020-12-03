@@ -19,9 +19,9 @@ const flashcardMatching = () => {
   requestedButtons.forEach( (requestedButton) => {
     requestedButton.addEventListener( 'click', (event) => {
       const requestedSavedPosition = requestedButton.dataset.requestedPosition
-      /* console.log(requestedButton.dataset.requestedPosition) */
+      console.log(requestedButton.dataset.requestedPosition)
       formRequestedPosition.value = requestedSavedPosition
-      /* console.log(formRequestedPosition) */
+      console.log(formRequestedPosition)
     });
   });
 
