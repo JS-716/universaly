@@ -16,7 +16,7 @@ class ExercisesController < ApplicationController
     @exercise.user = current_user
     if @exercise.valid?
       if @exercise.words_count > @exercise.category.words.size
-        flash[:alert] = "Mmh 🤔 seulement #{@exercise.category.words.size} mots disponibles dans cette catégory. "
+        flash[:alert] = "Mmh 🤔 seulement #{@exercise.category.words.size} flashcards disponibles dans cette catégory. "
         render :new
       else
         @exercise.save

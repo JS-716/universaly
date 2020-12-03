@@ -7,5 +7,5 @@
 meta_product_name: "Universaly"
 meta_title: "Universaly - Une porte ouverte sur le monde"
 meta_description: "Universaly est la solution qu'il vous faut pour progresser en anglais dans votre domaine de compétence"
-meta_image: "Universaly_logo.png" # should exist in `app/assets/images/`
+meta_image: "social_networks_1200x630.png" # should exist in `app/assets/images/`
 twitter_account: "@product_twitter_account"   # required for Twitter Cards
