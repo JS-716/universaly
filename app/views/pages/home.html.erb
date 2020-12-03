@@ -1,45 +1,51 @@
-<div class="main-container-home">
+<div class="home-banner">
 
-  <div class="container-home" style="z-index: -1">
+  <div class="home-banner-top">
+    <div class="text-center">
+      <img class="logo-home" src="/assets/Universaly_logo.png" alt="Logo d'Universaly">
+      <%# <img src="https://res.cloudinary.com/dyrkwhhio/image/upload/v1606333816/Universaly/Universaly_logo_-_height_reduced_vg2jgz.png" alt="Logo d'Universaly"> %>
+    </div>
+    
+    <div class="banner-encarts">
+      <div class="encart1 align-self-center">
+        <p class="encart-chiffre1">1</p>
+        <p class="encart-desc1 border">Créez un compte sur Universaly pour apprendre du vocabulaire ciblé en fonction de vos lectures. Rien de plus simple, cliquez ci-dessous sur « Créer mon compte ».</p>
+      </div>
 
-    <img src="https://res.cloudinary.com/dyrkwhhio/image/upload/v1606333816/Universaly/Universaly_logo_-_height_reduced_vg2jgz.png" alt="Logo d'Universaly">
+      <div class="encart2 align-self-end">
+        <p class="encart-chiffre2">2</p>
+        <p class="encart-desc2 border">Lors de vos lectures d’articles, sélectionnez un mot que vous ne comprenez pas pour l’ajouter à l’application Universaly.</p>
+      </div>
 
-    <div class="encart1">
-      <p class="encart-chiffre1">1</p>
-      <p class="encart-desc1" style="z-index: -1">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud </p>
+      <div class="encart3 align-self-start">
+        <p class="encart-chiffre3 ">3</p>
+        <p class="encart-desc3 border">Connectez-vous sur votre compte pour travailler les mots que vous avez enregistrés de vos lectures et travaillez les avec des exercices ludiques</p>
+      </div>
     </div>
 
-    <div class="encart2">
-      <p class="encart-chiffre2">2</p>
-      <p class="encart-desc2" style="z-index: -1">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud </p>
-    </div>
-
-    <div class="encart3">
-      <p class="encart-chiffre3">3</p>
-      <p class="encart-desc3" style="z-index: -1">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud </p>
-    </div>
-
-    <div class="container-btn-home">
+    <div class="banner-btn-home">
       <div class="button-signup"><%= link_to "Créer mon compte", new_user_registration_path %></div>
       <div class="button-login"><%= link_to "Me connecter", new_user_session_path %></div>
     </div>
 
   </div>
+  
+  <div class="home-banner-bottom">
+    <h1 class="home-slogan">"une porte ouverte sur le Monde"</h1>
 
-  <h1 class="home-slogan">"une porte ouverte sur le Monde"</h1>
-
-  <div class="container-footer-home">
-    <p>Anglais</p>
-    <%= link_to "Log out", destroy_user_session_path, method: :delete %>
-    <p>Espagnol</p>
-    <p>Allemand</p>
-    <p>Mandarin</p>
-    <p>Japonais</p>
-    <p>Italien</p>
-    <p>Portugais</p>
-    <p>Russe</p>
-    <p>Arabe</p>
+    <div class="container-footer-home">
+      <p>Anglais</p>
+      <p>Espagnol</p>
+      <p>Allemand</p>
+      <p>Mandarin</p>
+      <p>Japonais</p>
+      <p>Italien</p>
+      <p>Portugais</p>
+      <p>Russe</p>
+      <p>Arabe</p>
+    </div>
   </div>
+  
 </div>
 
 

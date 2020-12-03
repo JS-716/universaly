@@ -1,0 +1,158 @@
+.flashcards-bg-pink-gradient {
+  /* background-color: #FF8982 !important; */
+  background: linear-gradient(90deg, #CD71DA 4.81%, #FF8982 100%) !important;
+  border: transparent !important;
+}
+
+.flashcards-bg-transparent {
+  background-color: transparent;
+}
+
+.flashcards-columns {
+  display: flex;
+  justify-content: center;
+}
+
+.flashcards-column1 {
+  margin-right: 40px;
+}
+
+.flashcards-matching-game {
+  /* flex-grow:1;  */      
+  /* take up rest of line */
+  text-align:center;
+  flex-direction: column;
+  margin-left: 10%;
+  h1 {
+     font-weight: lighter;
+     margin: 20px 0 40px 0;
+  }
+}
+
+.flashcards-matching-gradient0 {
+  background: linear-gradient(180deg, #3D3F4F 0%, #363846 100%), linear-gradient(180deg, #CD71DA 4.81%, #EF4384 100%);
+  background-clip: padding-box, border-box;
+  background-origin: padding-box, border-box;
+}
+
+.flashcards-matching-gradient1 {
+  background: linear-gradient(180deg, #3D3F4F 0%, #363846 100%), linear-gradient(180deg, #FFC598 4.81%, #EF4384 100%);
+  background-clip: padding-box, border-box;
+  background-origin: padding-box, border-box; 
+}
+
+.flashcards-matching-gradient2 {
+  background: linear-gradient(180deg, #3D3F4F 0%, #363846 100%), linear-gradient(180deg, #CD71DA 4.81%, #FF8982 100%);
+  background-clip: padding-box, border-box;
+  background-origin: padding-box, border-box;
+}
+
+.flashcards-matching-gradient3 {
+  background: linear-gradient(180deg, #3D3F4F 0%, #363846 100%), linear-gradient(180deg, #7B4EB2 4.81%, #6083E9 100%);
+  background-clip: padding-box, border-box;
+  background-origin: padding-box, border-box;
+}
+
+
+.flashcards-requested-buttons {
+  padding: 12px 19px;
+  margin-bottom: 30px;
+  width: 187px;
+  height: 79px;
+  box-shadow: 0px 4px 4px rgba(36, 36, 36, 0.25);
+  border-radius: 15px;
+  color: white;
+  border: 3px solid transparent;
+ /*  background: linear-gradient(180deg, #3D3F4F 0%, #363846 100%), linear-gradient(180deg, #FFC598 4.81%, #EF4384 100%);
+  background-clip: padding-box, border-box;
+  background-origin: padding-box, border-box; */
+  
+}
+
+.flashcards-translated-buttons {
+  padding: 12px 19px;
+  margin-bottom: 30px;
+  width: 187px;
+  height: 79px;
+  box-shadow: 0px 4px 4px rgba(36, 36, 36, 0.25);
+  border-radius: 15px;
+  color: white;
+  border: 3px solid transparent;
+}
+
+/* .link-flashcards-score {
+  justify-content: center;
+  align-items: center;
+  padding: 12px 32px;
+  width: 197px;
+  height: 45px;
+  background: #FF8982;
+  box-shadow: 0px 4px 4px rgba(36, 36, 36, 0.25);
+  border-radius: 20px;
+  color: white;
+  display: inline-block;
+  text-decoration: none;
+} */
+
+.link-flashcards-score {
+  justify-content:center;
+  height: 45px;
+  width: 197px;
+  left: 443px;
+  top: 120px;
+  border-radius: 20px;
+  padding: 10px 50px;
+  background: #FF8982;
+  color: $font-dark-gray;
+  -webkit-transform: scale(1.2);
+}
+
+.link-flashcards-score:hover {
+  text-decoration: none;
+  color: inherit;
+  background: #CD71DA;
+  font-size: 16px;
+}
+
+.main-container-matching {
+  display: flex;
+  /* flex-wrap:nowrap; */
+  justify-content: center;
+}
+
+.matching-icons {
+  padding-left: 60px;
+  /* align-items: center; */
+}
+
+.matching-category {
+  color: white;
+}
+
+.matching-row {
+  align-items: center;
+  padding: 20px 0;
+  h6 {
+    color: white;
+    padding-left: 35px;
+  }
+}
+.my-challenge {
+  width: 321px;
+  height: 275px;
+  left: 80px;
+  top: 281px;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  box-sizing: border-box;
+  border-radius: 20px;
+  text-align: center;
+  margin-top: 6%;
+  /* margin-left: 10%; */
+}
+
+#matching-h3 {
+  /* font-size: 24px; */
+  font-weight: lighter;
+  color: white;
+  margin: 30px 0;
+}
