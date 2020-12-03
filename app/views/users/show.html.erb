@@ -11,13 +11,18 @@
   </div>
 
 
-  <div class="container-library-search d-flex justify-content-center p-3">
+  <div class="search-dashboard d-flex justify-content-center">
     <%= simple_form_for @word do |f| %>
-      <%= f.input :word_requested, placeholder: "Écris en anglais"%>
-      <%= f.input :category_id, collection: Category.all, placeholder: "Choisis une catégorie" %>
-      <%= f.submit "Traduire", class: "btnpractice-library ml-2" %>
-      <% end %>
+      <div>
+        <%= f.input :word_requested, placeholder: "Écris en anglais"%>
       </div>
+      <div>
+        <%= f.input :category_id, collection: Category.all, placeholder: "Choisis une catégorie" %>
+      </div>
+      <div>
+        <%= f.submit "Traduire", class: "btnpractice-library ml-2" %>
+      </div>
+      <% end %>
   </div>
 
 
