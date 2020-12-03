@@ -1,7 +1,7 @@
 class WordsController < ApplicationController
   def index
     @words = Word.all
-  
+
     if params[:search].present? && params[:search][:word].present?
       sql_query = "word_requested ILIKE :query1 OR word_translated ILIKE :query1"
       @words = @words.where(sql_query, query1: "%#{params[:search][:word]}%")
@@ -16,7 +16,7 @@ class WordsController < ApplicationController
       sql_query = "progress ILIKE :query3"
       @words = @words.where(sql_query, query3: "%#{params[:search][:progress]}%")
     end
-  
+
     if params[:search].present? && params[:search][:favorite].reject{|value| value == ""}[0].present?
       @words = @words.where(favorite: params[:search][:favorite].reject{|value| value == ""}[0])
     end

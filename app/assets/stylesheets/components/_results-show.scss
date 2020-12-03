@@ -45,11 +45,25 @@
   color: #628BFF;
 }
 
-
 .btn-end {
   position: relative;
   width: 100px;
   height: 100px;
   font-size: 15px;
-  background-color: #FF8FDE;
+  background-color: $abricot;
 }
+
+.photofinish {
+  width: 300px;
+  margin: 0px 75px;
+}
+
+#feloche {
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+.modal-content {
+  background-color: #88A7DE;
+}
+
