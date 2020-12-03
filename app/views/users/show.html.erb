@@ -9,7 +9,21 @@
         <%= link_to "Je pratique", new_exercise_path, class: "btnpractice d-flex align-items-center"%>
         <%= link_to "Ma bibliothèque", words_path, class: "btnbibli d-flex align-items-center"%>
   </div>
-  <div id="app-cover">
+
+
+  <div class="container-library-search d-flex justify-content-center p-3">
+    <%= simple_form_for @word do |f| %>
+      <%= f.input :word_requested, placeholder: "Écris en anglais"%>
+      <%= f.input :category_id, collection: Category.all, placeholder: "Choisis une catégorie" %>
+      <%= f.submit "Traduire", class: "btnpractice-library ml-2" %>
+      <% end %>
+      </div>
+  </div>
+
+
+
+
+ <!--  <div id="app-cover">
     <div id="app">
       <form method="get" action="" class="form-titou">
         <div id="f-element">
@@ -24,7 +38,7 @@
     </div>
     <div id="layer" title="Click the blue area to hide the form"></div>
     <div id="init"></div>
-  </div>
+  </div> -->
 
   <div class="divdash1 border p-3 m-5">
     <div class="d-flex row">
