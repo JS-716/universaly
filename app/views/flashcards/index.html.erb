@@ -1,27 +1,55 @@
-<h1>index de Flashcards</h1>
+<div class="main-container-matching">
+    <div class="flashcards-form d-none">
+      <%= simple_form_for [ @exercise, @flashcard ] do |f| %>
+        <%= f.input :requested_position %>
+        <%= f.input :translated_position %>
+        <%= f.submit "Send Positions", id: "btn-submit-positions" %>
+      <% end %>
+    </div>
 
-<div class="d-none">
-  <%= simple_form_for [ @exercise, @flashcard ] do |f| %>
-    <%= f.input :requested_position %>
-    <%= f.input :translated_position %>
-    <%= f.submit "Send Positions", id: "btn-submit-positions" %>
-  <% end %>
+    <div class="my-challenge">
+
+      <h3 id="matching-h3">Mon challenge</h3>
+
+      <div class="matching-icons d-flex flex-column">
+        <div class="matching-row d-flex">
+          <%= image_tag("Dashboard_categories.png", class: "bouquin")  %>
+          <h6>Finance</h6>
+          <%#= @exercise.category.name, class: "matching-category" %>
+        </div>
+        <div class="matching-row d-flex">
+          <%= image_tag("Flashcards_index_target_icon_modified.png", class: "bouquin")  %>
+          <h6>5 mots</h6>
+          <%#= "#{@exercise.words_count} mots", class: "matching-words-count" %>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="flashcards-matching-game">
+      <h1>Compose une paire</h1>
+      <div class="container-flashcards-columns">
+        <table class= "flashcards-columns">
+          <tr class = "d-flex mb-3">
+            <%# Colonne 1_Requested Word %>
+            <td class="flashcards-column1 d-flex flex-column">
+              <% @flashcards.sort_by(&:requested_position).each do |flashcard|  %>
+                <button class='flashcards-requested-buttons  <%= flashcard.matching ? "flashcards-bg-pink-gradient" : "flashcards-bg-transparent flashcards-matching-gradient#{[0, 1, 2, 3].sample}" %>' data-requested-position="<%=flashcard.requested_position%>"><%= flashcard.word.word_requested %></button>
+                <%#= link_to  flashcard.word.word_requested, class: "flashcards-requested-buttons", flashcard.matching ? 'flashcards-bg-pink-gradient' : 'flashcards-bg-transparent', id: "flashcards-matching-gradient#{index}", :data => { :requested-position => "#{flashcard.requested_position}" %>
+                <%#si flashcard est matchée, il met le bg green et inversement%>
+              <% end %>
+            </td>
+            <%# Colonne 2_Translated Word %>
+            <td class="flashcards-column2 d-flex flex-column">
+              <% @flashcards.sort_by(&:translated_position).each do |flashcard|  %>
+                <button class='flashcards-translated-buttons <%= flashcard.matching ? "flashcards-bg-pink-gradient" : "flashcards-bg-transparent flashcards-matching-gradient#{[0, 1, 2, 3].sample}" %>' data-translated-position="<%=flashcard.translated_position%>"><%= flashcard.word.word_translated %></button>
+              <% end %>
+            </td>
+          </tr>
+        </table>
+      </div>
+      
+      <%= link_to "Voir mon score", exercise_path(@exercise), class: "link-flashcards-score mb-3" %>
+    </div>
+   
 </div>
-
-<table>
-  <tr class= "d-flex">
-    <%# Colonne 1_Requested Word %>
-    <td class="d-flex flex-column">
-      <% @flashcards.sort_by(&:requested_position).each do |flashcard|  %>
-        <button class="requested-buttons <%= flashcard.matching ? 'bg-green' : 'bg-white' %>" data-requested-position="<%=flashcard.requested_position%>"><%= flashcard.word.word_requested %></button>
-      <%#si flashcard est matchée, il met le bg green et inversement%>
-      <% end %>
-    </td>
-    <%# Colonne 2_Translated Word %>
-    <td class="d-flex flex-column">
-      <% @flashcards.sort_by(&:translated_position).each do |flashcard|  %>
-        <button class="translated-buttons <%= flashcard.matching ? 'bg-green' : 'bg-white' %>" data-translated-position="<%=flashcard.translated_position%>"><%= flashcard.word.word_translated %></button>
-      <% end %>
-    </td>
-  </tr>
-</table>
