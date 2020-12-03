@@ -1,22 +1,23 @@
-<div class="container">
+<div class="main-container-word-new p-3 ml-5 mt-4 mr-5">
 
   <div class="header-words-show">
     <%#= link_to "Retour au dashboard", user_path(current.user), class:"btn btn-link" %>
     <h1 class="title-flashcard-show">Ajouter un nouveau mot</h1>
   </div>
 
-  <div class="container-library-search d-flex justify-content-center p-3 m2-5 mr-2">
-    <%= simple_form_for :search, url: new_word_path, method: :get, class: "form-inline" do |f| %>
-      <%= f.input :word, class: "form-control rounded-left mx-1", placeholder: "Écris en anglais"%>
+  <div class="container-library-search d-flex justify-content-center p-3">
+    <%= simple_form_for @word do |f| %>
+      <%= f.input :word_requested, placeholder: "Écris en anglais"%>
+      <%= f.input :category_id, collection: Category.all, placeholder: "Choisis une catégorie" %>
       <%= f.submit "Traduire", class: "btnpractice-library ml-2" %>
       <% end %>
       </div>
   </div>
 
   <div class="row d-flex justify-content-center" id="icons">
+    <!-- <i class="fas fa-volume-up"></i>
     <i class="fas fa-volume-up"></i>
-    <i class="fas fa-volume-up"></i>
-    <i class="fas fa-volume-up"></i>
+    <i class="fas fa-volume-up"></i> -->
   </div>
 
   <div class="row" id="row-word-show-show">
@@ -24,10 +25,10 @@
           <div class="card none-border-words">
             <div class="front-card-words-show">
                 <div class="div-card-word-requested">
-                  <h1 class="word-show-front"><i class="fas fa-volume-up"></i><%#= @text %></h1>
+                  <h1 class="word-show-front"><%= @word_requested %></h1>
                 </div>
                 <div class="div-card-word-translated none-border-words">
-                  <h2 class="word-show-front"><%#= @translation %></h2>
+                  <h2 class="word-show-front"><%= @word_translated %></h2>
                   <hr>
                 </div>
             </div>
