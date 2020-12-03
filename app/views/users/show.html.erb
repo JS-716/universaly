@@ -1,4 +1,4 @@
-<div class="main-container-dashboard">
+<div class="main-container-dashboard text-align">
   <div class="divdash d-flex justify-content-around m-5">
 
       <div class=" oui d-flex align-items-center">
@@ -11,14 +11,22 @@
   </div>
 
 
-  <div class="container-library-search d-flex justify-content-center p-3">
-    <%= simple_form_for @word do |f| %>
+  <%= simple_form_for @word do |f| %>
+  <div class="search-dashboard d-flex justify-content-center">
+    <div>
+      <h5 style="padding: 20px 20px 0px 0px">Traduction</h5>
+    </div>
+    <div style="padding: 0px 15px 0px 0px">
       <%= f.input :word_requested, placeholder: "Écris en anglais"%>
+    </div>
+    <div>
       <%= f.input :category_id, collection: Category.all, placeholder: "Choisis une catégorie" %>
-      <%= f.submit "Traduire", class: "btnpractice-library ml-2" %>
-      <% end %>
-      </div>
+    </div>
+    <div style="padding: 10px 10px 0px 0px">
+      <%= f.submit "Traduire", class: "btnpractice1 ml-2" %>
+    </div>
   </div>
+  <% end %>
 
 
 
