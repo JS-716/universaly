@@ -17,5 +17,5 @@
 
   <%= link_to "Je pratique", new_exercise_path %>
   <%= link_to "Ma bibliothèque", words_path %>
-  <a href="#">Mes paramètres</a>
+  <%= link_to "Se déconnecter", destroy_user_session_path, method: :delete %>
 </nav>
