@@ -38,13 +38,12 @@ class WordsController < ApplicationController
     @word.word_requested = params[:word][:word_requested]
     @word.language_requested = 'EN'
     @word.language_translated = 'FR'
-    @word.word_translated = (DeepL.translate @word_requested, @language_requested, @language_translated).text
+    @word.word_translated = DeepL.translate(@word.word_requested, @word.language_requested, @word.language_translated).text
     @word.progress = 'Nouveau'
-    #@favorite = false
     @word.user = current_user
-    @word.category = params[:word][:category_id]
+    @word.category_id = params[:word][:category_id]
     if @word.save
-      redirect_to word_path
+      redirect_to word_path(@word)
     else
       render 'words/index'
     end
