@@ -6,6 +6,16 @@
 //   border-top-right-radius: 16px;
 // }
 
+.btn-link {
+  color: white;
+  font-size: 18px;
+}
+
+.btn-link:hover {
+  text-decoration: none;
+  color: white;
+}
+
 .button-previous-word {
   position: relative;
   left: 195px;
