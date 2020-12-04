@@ -6,7 +6,7 @@
   align-items: center;
   padding: 12px 13px;
 
-  width: 197px;
+  width: 160px;
   height: 45px;
   left: 419px;
   top: 707px;
@@ -18,7 +18,7 @@
       display: inline-block;
       text-decoration: none;
       color: $font-dark-gray;
-      font-size: 20px;
+      font-size: 16px;
     }
 }
 
@@ -29,9 +29,9 @@
   align-items: center;
   padding: 12px 13px;
 
-  width: 197px;
+  width: 160px;
   height: 45px;
-  left: 884px;
+  left: 419px;
   top: 707px;
 
   background: $abricot;
@@ -42,7 +42,7 @@
       display: inline-block;
       text-decoration: none;
       color: $font-dark-gray;
-      font-size: 20px;
+      font-size: 16px;
     }
 }
 
@@ -50,7 +50,7 @@
   display: flex;
   justify-content: space-around;
   top: 585px;
-  margin-top: 50px;
+  margin-top: -100px;
  }
 
  .banner-encarts {
@@ -67,7 +67,7 @@
 .home-banner-top {
   //width: 100wh;
   height: 80vh;
-  background-image: url("Home_banner.png");
+  background-image: url("https://res.cloudinary.com/dyrkwhhio/image/upload/v1606326213/Universaly/Home_Banni%C3%A8re_width_1200_-_height_smaller_ydhzmw.png");
   background-size: 100% 100%;
   //background-repeat: no-repeat;
 }
@@ -79,80 +79,84 @@
 .container-footer-home {
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-  padding: 59px 0px 0px 0px;
-    p {
-      padding: 0 50px;
-    }
+  margin: 35px;
+  font-size: 14px;
+  //margin: 30px 10px 0px 10px;
+  //padding: 59px 0px 0px 0px;
+    // p {
+    //   padding: 0 50px;
+    // }
 }
 
 .encart1 {
   width: 305px;
-  height: 255px;
+  height: 290px;
   position: relative;
    .encart-chiffre1 {
       width: 18px;
       height: 38px;
-      padding: 23px;
+      padding: 12px;
       //margin: 0;
       position: absolute;
-      top: -30px;
-      margin-left: -30px;
+      top: -18px;
+      margin-left: -18px;
       font-family: Roboto;
       font-style: normal;
       font-weight: 300;
-      font-size: 32px;
+      font-size: 25px;
       line-height: 37px;
       /* identical to box height */
       display: flex;
       align-items: center;
       color: #FFFFFF;
 
-      width: 64px;
-      height: 64px;
+      width: 40px;
+      height: 40px;
       border-radius: 50%;
       background: $peach;
       box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     }
     .encart-desc1 {
       color: white;
-      width: 300px;
-      height: 230px;
+      // width: 300px;
+      // height: 230px;
       //text-align: justify;
-      font-size: 20px;
+      font-size: 16px;
       background-color: rgba(255, 255, 255, 0.1);
 
       //border: 1px solid rgba(255, 255, 255, 0.5);
       border-radius: 20px;
-      padding: 17px 32px 12px 31px;
+      //padding: 17px 32px 12px 31px;
+      padding: 17px 17px 17px 17px;
     }
 }
 
 .encart2 {
   width: 305px;
-  height: 190px;
+  height: 250px;
   position: relative;
    .encart-chiffre2 {
       width: 18px;
       height: 38px;
-      padding: 23px;
+      padding: 12px;
       //margin: 0;
       position: absolute;
-      top: -30px;
-      margin-left: -30px;
+      top: -18px;
+      margin-left: -18px;
       font-family: Roboto;
       font-style: normal;
       font-weight: 300;
-      font-size: 32px;
+      font-size: 25px;
       line-height: 37px;
       /* identical to box height */
       display: flex;
       align-items: center;
       color: #FFFFFF;
 
-      width: 64px;
-      height: 64px;
+      width: 40px;
+      height: 40px;
       border-radius: 50%;
       background: $yellow-home;
       box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
@@ -160,14 +164,15 @@
     .encart-desc2 {
       color: white;
       background-color: rgba(255, 255, 255, 0.1);
-      width: 300px;
-      height: 180px;
+      // width: 300px;
+      // height: 180px;
       //text-align: justify;
-      font-size: 20px;
+      font-size: 16px;
 
       //border: 1px solid rgba(255, 255, 255, 0.5);
       border-radius: 20px;
-      padding: 17px 32px 12px 31px;
+      //padding: 17px 32px 12px 31px;
+      padding: 17px 17px 17px 17px;
     }
 }
 
@@ -178,23 +183,23 @@
    .encart-chiffre3 {
       width: 18px;
       height: 38px;
-      padding: 23px;
+      padding: 12px;
       //margin: 0;
       position: absolute;
-      top: -30px;
-      margin-left: -30px;
+      top: -18px;
+      margin-left: -18px;
       font-family: Roboto;
       font-style: normal;
       font-weight: 300;
-      font-size: 32px;
+      font-size: 25px;
       line-height: 37px;
       /* identical to box height */
       display: flex;
       align-items: center;
       color: #FFFFFF;
 
-      width: 64px;
-      height: 64px;
+      width: 40px;
+      height: 40px;
       border-radius: 50%;
       background: $abricot;
       box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
@@ -202,26 +207,28 @@
     .encart-desc3 {
       color: white;
       background-color: rgba(255, 255, 255, 0.1);
-      width: 300px;
-      height: 210px;
+      // width: 300px;
+      // height: 210px;
       //text-align: justify;
-      font-size: 20px;
+      font-size: 16px;
 
       //border: 1px solid rgba(255, 255, 255, 0.5);
       border-radius: 20px;
-      padding: 17px 32px 12px 31px;
+      //padding: 17px 32px 12px 31px;
+      padding: 17px 17px 17px 17px;
     }
 }
 
 .home-slogan {
   font-weight: 300;
+  font-size: 30px;
   text-align: center;
   top: 800px;
   /* margin-top: 4px; */
 }
 
 .logo-home {
-  width: 400px;
-  padding-top: 30px;
+  width: 250px;
+  padding-top: 20px;
   text-align: center;
 }
