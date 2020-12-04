@@ -40,8 +40,9 @@ class FlashcardsController < ApplicationController
   def index
    @flashcard = Flashcard.new
    @exercise = Exercise.find(params[:exercise_id])
-   
-   @flashcards = @exercise.flashcards
+
+   @flashcards = @exercise.flashcards[0...@exercise.words_count]
+
   end
 
   def create
