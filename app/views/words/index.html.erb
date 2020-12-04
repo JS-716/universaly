@@ -1,5 +1,5 @@
 <div class="main-container-library p-3 ml-5 mt-4 mr-5">
-  <h1>Mots enregistrés sur Universaly</h1>
+  <%# <h1>Mots enregistrés sur Universaly</h1> %>
   <hr>
 </div>
 
@@ -20,25 +20,25 @@
         <%= f.input :category_id, collection:Category.all, include_hidden: false, label: "Choisir une catégorie", as: :radio_buttons, input_html: { class: "tag-selector-small" }, item_wrapper_class: 'tag-item' %>
       </div>
       <div class="container-library-search-word d-flex justify-content-center mt-3 mb-3">
-        <%= f.submit "Search", class: "btnpractice-library" %>
+        <%= f.submit "Rechercher", class: "btnpractice-library" %>
         <% end %>
       </div>
 </div>
 
 <div class="container d-flex justify-content-left">
   <div>
-    <p> Résultats : <%= @words.count %> mots</p>
+    <p style="padding: 0px 0px 0px 120px" > Résultats : <%= @words.count %> mots</p>
   </div>
 </div>
 
   <table class="container-table">
     <thead>
       <tr>
-        <th id="th-round-left"><h2>Anglais</h2></th>
-        <th><h2>Français</h2></th>
-        <th><h2>Catégorie</h2></th>
-        <th><h2>Progrès</h2></th>
-        <th id="th-round-right"><h2>Favoris</h2></th>
+        <th id="th-round-left"><h2 class="h2-biblio">Anglais</h2></th>
+        <th><h2 class="h2-biblio">Français</h2></th>
+        <th><h2 class="h2-biblio">Catégorie</h2></th>
+        <th><h2 class="h2-biblio">Progrès</h2></th>
+        <th id="th-round-right"><h2 class="h2-biblio">Favoris</h2></th>
       </tr>
     </thead>
 
