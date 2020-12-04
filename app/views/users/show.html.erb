@@ -58,7 +58,7 @@
       <div class="d-flex column align-items-center">
         <%= image_tag("Dashboard_streak_gray.png", class: "flamme")  %>
         <p class="paragraphspaddingfordash">Streak:</p> <!-- + cl_image_tag -->
-        <h3>3 jours d'affilée</h3>
+        <h3>5 jours d'affilée</h3>
         <%# if @user.streak > 1 %>
         <%#= "#{@user.streak(:sessions)} jours à la suite, Félicitations !" %>
         <%# else %>
@@ -68,7 +68,7 @@
       </div>
       <div class="d-flex">
         <p class="paragraphspaddingfordash">Mots appris:</p>
-        <h3>32</h3>
+        <h3>112</h3>
         <!--   Total de mots appris-->
         <%#= @user.words.count.where(progress:"appris") %>
       </div>

@@ -1,10 +1,11 @@
 .title-exercise-container {
-    border-radius: 30px;
+    border-radius: 16px;
     color: white;
+    font: $body-font;
   }
 
 .exercise-container {
-  border-radius: 30px;
+  border-radius: 16px;
   color: white;
 }
 
@@ -22,6 +23,7 @@
   color: $font-dark-gray;
   width: auto;
   margin: auto;
+  border: black;
   padding: 8px 24px;
   background: $yellow-home;
   border-radius: 30px;

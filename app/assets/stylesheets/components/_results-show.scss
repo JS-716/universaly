@@ -7,6 +7,7 @@
   margin: 0px 0px 15px 0px;
   margin-bottom: 30px;
   color: white;
+  
 
 }
 
@@ -32,17 +33,18 @@
 }
 
 
-#wordfrench {
-  text-align: left;
-  font-size: 20px !important;
-
-}
-
-#wordenglish {
+.wordfrench {
   text-align: center;
+  font-size: 20px;
   padding: 0px 15px 0px 0px;
-  font-size: 20px !important;
+
 }
+
+// #wordenglish {
+//   text-align: center;
+//   padding: 0px 15px 0px 0px;
+//   font-size: 20px !important;
+// }
 
 #results {
   color: #628BFF;
@@ -69,11 +71,12 @@
 #feloche {
   font-size: 1.5rem;
   text-align: center;
+  color: white;
 }
 
 .modal-content {
   background-color: #88A7DE;
-  border-radius: 30px;
+  border-radius: 16px;
 }
 
 .modal-header .close {
