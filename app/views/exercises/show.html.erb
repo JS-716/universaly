@@ -6,7 +6,7 @@
     <h3>Quels sont les mots que vous avez retenus?</h3>
   </div> -->
   <div class="new-words">
-      <% @exercise.flashcards.each do |flashcard| %>
+      <% @exercise.flashcards[0...@exercise.words_count].each do |flashcard| %>
         <div class=" word1 d-flex justify-content-between">
           <div>
             <p class="wordfrench"> <%= flashcard.word.word_requested %> </p>
