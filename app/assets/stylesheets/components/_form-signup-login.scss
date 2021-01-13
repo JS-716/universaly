@@ -1,0 +1,18 @@
+.form-signup-login {
+  padding: 10px 20px;
+  margin-top: 50px;
+  a {
+    color: $yellow;
+  }
+  abbr { 
+    /* to remove .. under* when field required  */
+    text-decoration: none !important;
+  }
+  .text-muted {
+    color: $abricot !important;
+  }
+  #user_email, #user_password, #user_password_confirmation {
+    border: white;
+    border-radius: 40px;
+  }
+}
