@@ -7,6 +7,13 @@
   }
 }
 
+.container-library-search-word {
+   abbr { 
+    /* to remove .. under* when field required  */
+    text-decoration: none !important;
+  }
+}
+
 .container-library-search-word-progress {
   input[type="radio"] {
   display: none;

@@ -4,6 +4,11 @@
     font: $body-font;
   }
 
+  .choice-exercise-container {
+    abbr { 
+      text-decoration: none !important;
+    }
+}
 .exercise-container {
   border-radius: 16px;
   color: white;
