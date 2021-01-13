@@ -8,11 +8,15 @@
     /* to remove .. under* when field required  */
     text-decoration: none !important;
   }
+  h2 {
+    margin-bottom: 20px;
+  }
   .text-muted {
     color: $abricot !important;
   }
   #user_email, #user_password, #user_password_confirmation {
     border: white;
     border-radius: 40px;
+    width: 352.8px;
   }
 }
