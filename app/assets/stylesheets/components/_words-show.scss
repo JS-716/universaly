@@ -17,18 +17,29 @@
 }
 
 .button-previous-word {
-  position: relative;
-  left: 195px;
+  /* position: relative; */
+  /*  left: 195px; */
+  margin-top: 510px;
 }
 .button-next-word {
-  position: relative;
-  right: 205px;
+  /* position: relative; */
+  /*   right: 205px; */
+  margin-top: 510px;
 }
 .container-btn-words-show {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
+ /*  display: flex;
+  justify-content: space-between; */
+ /*  align-items: center; */
+}
+
+.div-card-word-translated {
+  margin-top: 60px;
+}
+
+.div-card-word-translated hr {
+  width: 120px;
+  margin-top: 15px;
+  background-color: white;
 }
 
 .front-card-words-show {
@@ -43,9 +54,27 @@
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), inset 0px 4px 4px rgba(255, 255, 255, 0.1);
 }
 
+.header-words-show-back-btn {
+  margin-top: 50px;
+}
+/* .header-words-show {
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+} */
+
 .none-border-words {
   background-color: transparent !important;
   border: 0px solid rgba(0, 0, 0, 0) !important;
+}
+
+.title-flashcard-words-show{
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.word-show-center {
+  padding: 0 55px;
 }
 
 .word-show-context {
@@ -54,6 +83,18 @@
   top: 191px;
   padding: 0 28px;
   color: white;
+}
+
+.word-show-front {
+  text-align: center;
+  position: relative;
+  top: 84px;
+  color: white;
+}
+
+.words-flashcard {
+  margin: 50px 100px 120px 100px;
+  display: flex;
 }
 
 #row-word-show-show {
@@ -68,25 +109,3 @@
     text-align: justify;
     line-height: 29px;
   }
-
-.card-container-word {
-//align-items: center;
-}
-
-.word-show-front {
-  text-align: center;
-  position: relative;
-  top: 84px;
-  color: white;
-}
-
-.div-card-word-translated {
-  margin-top: 60px;
-}
-
-.div-card-word-translated hr {
-  width: 120px;
-  margin-top: 15px;
-  background-color: white;
-}
-

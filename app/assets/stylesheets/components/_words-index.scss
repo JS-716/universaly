@@ -1,16 +1,16 @@
+.container-library-search {
+   abbr { 
+    /* to remove .. under* when field required  */
+    text-decoration: none !important;
+  }
+}
+
 .container-library-search-word-search {
   input {
   border-radius: 10px;
   border-radius: 10px;
   height: 35px;
   font-size: 12px;
-  }
-}
-
-.container-library-search-word {
-   abbr { 
-    /* to remove .. under* when field required  */
-    text-decoration: none !important;
   }
 }
 
@@ -30,6 +30,10 @@
   input {
   display: none;
   }
+}
+
+.container-table {
+  margin-bottom: 120px !important;
 }
 
 [type="checkbox"]:not(:checked),

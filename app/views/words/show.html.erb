@@ -1,41 +1,45 @@
-<div class="container">
+<div class="container d-flex">
 
-  <div class="header-words-show">
+  <div class="header-words-show-back-btn">
     <%= image_tag("btn_previous.png", class: "button-previous-word2")  %>
     <%= link_to "Retour à la liste", words_path, class:"btn btn-link" %>
-    <h2 class="title-flashcard-show"><%= @word.category.name%></h2>
   </div>
-  <div class="row" id="row-word-show-show">
-        <div class="card-container-word">
-          <div class="card none-border-words">
-            <div class="front-card-words-show">
-                <div class="div-card-word-requested">
-                  <h1 class="word-show-front"><%= @word.word_requested %>    <i class="fas fa-volume-up"></i></h1>
-                </div>
-                <div class="div-card-word-translated none-border-words">
-                  <h2 class="word-show-front"><%= @word.word_translated %></h2>
-                  <hr>
-                </div>
-              <div class="word-show-context">
-                <h5>Extrait</h5>
-                <p id="word-show-description-requested"><%= "~ #{@word.context_details} ~" %></p>
-              </div>
-
-            </div>
-          </div>
-        </div>
-  </div>
-
-  <div class="container-btn-words-show">
+    
+  <div class="words-flashcard">
     <div class="button-previous-word">
       <%= link_to word_path((@word.id-1)) do %>
         <%= image_tag "btn_previous.png" %>
       <% end %>
+    </div>
+    <div class="word-show-center">
+      <h2 class="title-flashcard-words-show"><%= @word.category.name%></h2>
+      <div class="row" id="row-word-show-show">
+          <div class="card-container-word">
+            <div class="card none-border-words">
+              <div class="front-card-words-show">
+                  <div class="div-card-word-requested">
+                    <h1 class="word-show-front"><%= @word.word_requested %>    <i class="fas fa-volume-up"></i></h1>
+                  </div>
+                  <div class="div-card-word-translated none-border-words">
+                    <h2 class="word-show-front"><%= @word.word_translated %></h2>
+                    <hr>
+                  </div>
+
+                <div class="word-show-context">
+                  <h5>Extrait</h5>
+                  <p id="word-show-description-requested"><%= "~ #{@word.context_details} ~" %></p>
+                </div>
+              </div>
+            </div>
+          </div>
+      </div>
     </div>
     <div class="button-next-word">
       <%= link_to word_path((@word.id+1)) do %>
         <%= image_tag "btn_next.png" %>
       <% end %>
     </div>
+
   </div>
+
 </div>
