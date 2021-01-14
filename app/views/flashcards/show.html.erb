@@ -1,50 +1,49 @@
-<div class="container">
-  <h2 class="title-flashcard-show"><%= @flashcard.exercise.category.name%></h2>
+<div class="container d-flex justify-content-center">
+
+  <div class="button-previous-flashcards">
+    <%= link_to exercise_flashcard_path(@exercise, @previous_flashcard) do %>
+      <%= image_tag "btn_previous.png" %>
+    <% end %>
+  </div>
+
+  <div class="flashcard-show-center">
+    <h2 class="title-flashcard-show"><%= @flashcard.exercise.category.name%></h2>
   
-  <div class="row" id="row-flashcards-show">
+    <div class="row" id="row-flashcards-show">
+      <div class="card-container">
+        <div class="card none-border">
 
-        <div class="card-container">
-          <div class="card none-border">
-
-            <div class="front">
-              <h1 class="word-flashcard-front"><%= @flashcard.word.word_requested %></h1>
-              <div class="language-box-front">
-                <p><%= @flashcard.word.language_requested.upcase %></p>
-              </div>
-              <div class="flashcard-context">
-                <h5>Extrait</h5>
-                <p id="word-description-requested"><%= "~ #{@flashcard.word.context_details} ~" %></p>
-              </div>
+          <div class="front">
+            <h1 class="word-flashcard-front"><%= @flashcard.word.word_requested %></h1>
+            <div class="language-box-front">
+              <p><%= @flashcard.word.language_requested.upcase %></p>
             </div>
-
-            <div class="back">
-              <h1 class="word-flashcard-back"><%= @flashcard.word.word_translated.capitalize %></h1>
-              <div class="language-box-back">
-                <p><%= @flashcard.word.language_translated.upcase %></p>
-              </div>
+            <div class="flashcard-context">
+              <h5>Extrait</h5>
+              <p id="word-description-requested"><%= "~ #{@flashcard.word.context_details} ~" %></p>
             </div>
+          </div>
 
+          <div class="back">
+            <h1 class="word-flashcard-back"><%= @flashcard.word.word_translated.capitalize %></h1>
+            <div class="language-box-back">
+              <p><%= @flashcard.word.language_translated.upcase %></p>
+            </div>
           </div>
 
         </div>
-  </div>
 
-  <div class="container-btn-flashcards-show">
-    <div class="button-previous-flashcards">
-      <%= link_to exercise_flashcard_path(@exercise, @previous_flashcard) do %>
-        <%= image_tag "btn_previous.png" %>
-      <% end %>
-    </div>
-    
-    <div class="button-next-flashcards">
-      <%= link_to exercise_flashcard_path(@exercise, @next_flashcard) do %>
-        <%= image_tag "btn_next.png" %>
-      <% end %>
+      </div>
+      <div class="remaining-flashcards">
+        <h5><%= "#{(@exercise.flashcards.index(@flashcard))+1}/#{@flashcard.exercise.words_count}" %></h5>
+      </div>
     </div>
   </div>
 
-  <div class="remaining-flashcards">
-    <h5><%= "#{(@exercise.flashcards.index(@flashcard))+1}/#{@flashcard.exercise.words_count}" %></h5>
+  <div class="button-next-flashcards">
+    <%= link_to exercise_flashcard_path(@exercise, @next_flashcard) do %>
+      <%= image_tag "btn_next.png" %>
+    <% end %>
   </div>
 
 </div>

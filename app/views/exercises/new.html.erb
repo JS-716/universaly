@@ -3,7 +3,7 @@
     <h1>Prêt pour l'exercice</h1>
   </div>
   <div class="exercise-container text-center border p-3 m-5">
-    <div class="choise-exercise-container text-center text-exercices">
+    <div class="choice-exercise-container text-center text-exercices">
       <%= simple_form_for @exercise do |f| %>
 
         <%= f.association :category, label_method: :name, value_method: :id, label: "Choisir entre les catégories", error: "Choix de la catégorie obligatoire",

@@ -1,3 +1,10 @@
+.container-library-search {
+   abbr { 
+    /* to remove .. under* when field required  */
+    text-decoration: none !important;
+  }
+}
+
 .container-library-search-word-search {
   input {
   border-radius: 10px;
@@ -23,6 +30,10 @@
   input {
   display: none;
   }
+}
+
+.container-table {
+  margin-bottom: 120px !important;
 }
 
 [type="checkbox"]:not(:checked),
