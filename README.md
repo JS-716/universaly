@@ -1,3 +1,5 @@
-Rails app created by the [Le Wagon coding bootcamp](https://www.lewagon.com) team: Titouan BERTHOD, Romain QUECHON, Jasmine SEREN-ROSSO and Thomas TOULOUSE
+Universaly is a foreign language learning platform based on gamification.
 
-url: http://www.universaly.work/
+This Rails app was created @lewagon (coding bootcamp: https://www.lewagon.com/fr) by: Titouan BERTHOD, Romain QUECHON, Jasmine SEREN-ROSSO and Thomas TOULOUSE.
+
+website: http://www.universaly.work/
