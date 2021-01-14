@@ -1,19 +1,21 @@
 // Classes
 .button-previous-flashcards {
-  position: relative;
-  left: 195px;
+  /* position: relative; */
+  /*  left: 195px; */
+  margin-top: 510px;
 }
 
 .button-next-flashcards {
-  position: relative;
-  right: 205px;
+  /* position: relative; */
+  /*  left: 195px; */
+  margin-top: 510px;
 }
 
 .container-btn-flashcards-show {
-  display: flex;
+  /* display: flex;
   flex-direction: row;
   justify-content: space-between;
-  align-items: center;
+  align-items: center; */
 }
 
 .flashcard-context {
@@ -22,6 +24,10 @@
   top: 191px;
   padding: 0 28px;
   color: white;
+}
+
+.flashcard-show-center {
+  padding: 0 55px;
 }
 
 .language-box-back {
