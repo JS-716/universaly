@@ -31,7 +31,10 @@
     <div class="wrapper">
       <div class="d-flex justify-content-center">
         <% unless current_page?("/") %>
-        <%= image_tag("Universaly_logo.png", class: "universaly-logo") %>
+        <%#= image_tag("Universaly_logo.png", class: "universaly-logo") %>
+          <%= link_to "/" do %>
+            <%= image_tag("Universaly_logo.png", class: "universaly-logo") %>
+          <% end %>
         <% end %>
       </div>
 
