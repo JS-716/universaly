@@ -24,6 +24,23 @@ class WordsController < ApplicationController
 
   def show
     @word = Word.find(params[:id])
+    @words = Word.all
+    # bouton previous
+    if @words.index(@word) == 0
+      previous_index = @words.index(@word)
+      @previous_word = @words[previous_index]
+    else
+      previous_index = @words.index(@word) - 1
+      @previous_word = @words[previous_index]
+    end
+    # bouton next
+    if @word.id ==  @words[-1].id
+      next_index = @words.index(@word)
+      @next_word = @words[next_index]
+    else
+      next_index = @words.index(@word) + 1
+      @next_word = @words[next_index]
+    end
   end
 
   def new
