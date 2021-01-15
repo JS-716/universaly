@@ -14,13 +14,11 @@
       <div class="matching-icons d-flex flex-column">
         <div class="matching-row d-flex">
           <%= image_tag("Dashboard_categories.png", class: "bouquin")  %>
-          <h6>Webdev</h6>
-          <%#= @exercise.category.name, class: "matching-category" %>
+          <h6><%= @exercise.category.name %></h6>
         </div>
         <div class="matching-row d-flex">
           <%= image_tag("Flashcards_index_target_icon_modified.png", class: "bouquin")  %>
-          <h6>5 mots</h6>
-          <%#= "#{@exercise.words_count} mots", class: "matching-words-count" %>
+          <h6><%= "#{@exercise.words_count} mots"%></h6>
         </div>
       </div>
 
@@ -33,6 +31,7 @@
           <tr class = "d-flex mb-3">
             <%# Colonne 1_Requested Word %>
             <td class="flashcards-column1 d-flex flex-column">
+            
               <% @flashcards.sort_by(&:requested_position).each do |flashcard|  %>
                 <button class='flashcards-requested-buttons  <%= flashcard.matching ? "flashcards-bg-pink-gradient" : "flashcards-bg-transparent flashcards-matching-gradient#{[0, 1, 2, 3].sample}" %>' data-requested-position="<%=flashcard.requested_position%>"><%= flashcard.word.word_requested %></button>
                 <%#= link_to  flashcard.word.word_requested, class: "flashcards-requested-buttons", flashcard.matching ? 'flashcards-bg-pink-gradient' : 'flashcards-bg-transparent', id: "flashcards-matching-gradient#{index}", :data => { :requested-position => "#{flashcard.requested_position}" %>
