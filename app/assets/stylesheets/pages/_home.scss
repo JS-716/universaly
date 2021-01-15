@@ -1,25 +1,15 @@
 // Specific CSS for your home-page
-.button-signup {
+.banner-btn-home {
   display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  padding: 12px 13px;
+  justify-content: space-around;
+  top: 585px;
+  margin-top: -20px;
+ }
 
-  width: 160px;
-  height: 45px;
-  left: 419px;
-  top: 707px;
-
-  background: $yellow-home;
-  box-shadow: 0px 4px 4px rgba(255, 255, 255, 0.1);
-  border-radius: 20px;
-    a {
-      display: inline-block;
-      text-decoration: none;
-      color: $font-dark-gray;
-      font-size: 16px;
-    }
+ .banner-encarts {
+  display: flex;
+  justify-content: space-around;
+  height: 380px;
 }
 
 .button-login {
@@ -46,34 +36,27 @@
     }
 }
 
-.banner-btn-home {
+.button-signup {
   display: flex;
-  justify-content: space-around;
-  top: 585px;
-  margin-top: -20px;
- }
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 12px 13px;
 
- .banner-encarts {
-  display: flex;
-  justify-content: space-around;
-  height: 380px;
-}
+  width: 160px;
+  height: 45px;
+  left: 419px;
+  top: 707px;
 
-.home-banner {
-  width: 100%;
-  height: 100vh;
-}
-
-.home-banner-top {
-  //width: 100wh;
-  height: 80vh;
-  background-image: url("https://res.cloudinary.com/dyrkwhhio/image/upload/v1606326213/Universaly/Home_Banni%C3%A8re_width_1200_-_height_smaller_ydhzmw.png");
-  background-size: 100% 100%;
-  //background-repeat: no-repeat;
-}
-
-.home-banner-bottom {
-  height: 20vh;
+  background: $yellow-home;
+  box-shadow: 0px 4px 4px rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+    a {
+      display: inline-block;
+      text-decoration: none;
+      color: $font-dark-gray;
+      font-size: 16px;
+    }
 }
 
 .container-footer-home {
@@ -81,7 +64,7 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  margin: 35px;
+  margin: 80px 35px 35px 35px;
   font-size: 14px;
   //margin: 30px 10px 0px 10px;
   //padding: 59px 0px 0px 0px;
@@ -217,6 +200,23 @@
       //padding: 17px 32px 12px 31px;
       padding: 17px 17px 17px 17px;
     }
+}
+
+.home-banner {
+  width: 100%;
+  height: 100vh;
+}
+
+.home-banner-bottom {
+  height: 20vh;
+}
+
+.home-banner-top {
+  //width: 100wh;
+  height: 80vh;
+  background-image: url("https://res.cloudinary.com/dyrkwhhio/image/upload/v1606326213/Universaly/Home_Banni%C3%A8re_width_1200_-_height_smaller_ydhzmw.png");
+  background-size: 100% 100%;
+  //background-repeat: no-repeat;
 }
 
 .home-slogan {
