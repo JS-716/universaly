@@ -7,7 +7,7 @@
     
   <div class="words-flashcard">
     <div class="button-previous-word">
-      <%= link_to word_path((@word.id-1)) do %>
+      <%= link_to word_path(@previous_word) do %>
         <%= image_tag "btn_previous.png" %>
       <% end %>
     </div>
@@ -35,7 +35,7 @@
       </div>
     </div>
     <div class="button-next-word">
-      <%= link_to word_path((@word.id+1)) do %>
+      <%= link_to word_path(@next_word) do %>
         <%= image_tag "btn_next.png" %>
       <% end %>
     </div>
