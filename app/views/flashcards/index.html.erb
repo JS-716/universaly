@@ -29,16 +29,14 @@
       <div class="container-flashcards-columns">
         <table class= "flashcards-columns">
           <tr class = "d-flex mb-3">
-            <%# Colonne 1_Requested Word %>
+            <%# Column 1_Requested Word %>
             <td class="flashcards-column1 d-flex flex-column">
             
               <% @flashcards.sort_by(&:requested_position).each do |flashcard|  %>
                 <button class='flashcards-requested-buttons  <%= flashcard.matching ? "flashcards-bg-pink-gradient" : "flashcards-bg-transparent flashcards-matching-gradient#{[0, 1, 2, 3].sample}" %>' data-requested-position="<%=flashcard.requested_position%>"><%= flashcard.word.word_requested %></button>
-                <%#= link_to  flashcard.word.word_requested, class: "flashcards-requested-buttons", flashcard.matching ? 'flashcards-bg-pink-gradient' : 'flashcards-bg-transparent', id: "flashcards-matching-gradient#{index}", :data => { :requested-position => "#{flashcard.requested_position}" %>
-                <%#si flashcard est matchée, il met le bg green et inversement%>
               <% end %>
             </td>
-            <%# Colonne 2_Translated Word %>
+            <%# Column 2_Translated Word %>
             <td class="flashcards-column2 d-flex flex-column">
               <% @flashcards.sort_by(&:translated_position).each do |flashcard|  %>
                 <button class='flashcards-translated-buttons <%= flashcard.matching ? "flashcards-bg-pink-gradient" : "flashcards-bg-transparent flashcards-matching-gradient#{[0, 1, 2, 3].sample}" %>' data-translated-position="<%=flashcard.translated_position%>"><%= flashcard.word.word_translated %></button>

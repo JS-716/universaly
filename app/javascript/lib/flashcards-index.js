@@ -1,6 +1,6 @@
 const flashcardMatching = () => {
 
-  // select the form input (id given trough simple for form)
+  // select the form input (id given through simple for form)
   const formRequestedPosition = document.querySelector('#flashcard_requested_position');
   /* console.log(formRequestedPosition) */
   const formTranslatedPosition = document.querySelector('#flashcard_translated_position');
